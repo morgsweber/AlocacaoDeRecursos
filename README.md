@@ -4,7 +4,7 @@ Este repositório é destinado para o projeto semestral da disciplina de Prátic
 ### Autores: Alexei Abianna, Bárbara Vilela, Elise Prezzi, Gilberto Junior, Júlia Godoy, Morgana Weber, Pedro Vaz, Thales Santin
 
 ## Requirements:
- - Node (https://nodejs.org/en/download/)
+ - [Node](https://nodejs.org/en/download/)
 
 ## Running
 `npm install`
