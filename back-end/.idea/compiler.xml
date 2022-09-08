@@ -11,6 +11,7 @@
         <module name="alocacao-recursos-application" />
         <module name="alocacao-recursos-domain" />
         <module name="alocacao-recursos-postgres" />
+        <module name="alocacao-recursos-business" />
         <module name="alocacao-recursos-core" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="alocacao-recursos" options="-parameters" />
       <module name="alocacao-recursos-application" options="-parameters" />
+      <module name="alocacao-recursos-business" options="-parameters" />
       <module name="alocacao-recursos-core" options="-parameters" />
       <module name="alocacao-recursos-domain" options="-parameters" />
       <module name="alocacao-recursos-http" options="-parameters" />

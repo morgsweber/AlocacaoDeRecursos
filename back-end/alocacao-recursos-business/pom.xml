@@ -9,15 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>alocacao-recursos-postgres</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>prod</scope>
-        </dependency>
-    </dependencies>
+    <artifactId>alocacao-recursos-business</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

@@ -9,7 +9,8 @@
 		<module>alocacao-recursos-application</module>
 		<module>alocacao-recursos-http</module>
 		<module>alocacao-recursos-core</module>
-	</modules>
+        <module>alocacao-recursos-business</module>
+    </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -36,12 +37,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>prod</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
