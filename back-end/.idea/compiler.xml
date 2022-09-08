@@ -2,17 +2,27 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="alocacao-recursos" />
+        <module name="alocacao-recursos-http" />
+        <module name="alocacao-recursos-application" />
+        <module name="alocacao-recursos-domain" />
+        <module name="alocacao-recursos-postgres" />
+        <module name="alocacao-recursos-core" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="alocacao-recursos" options="-parameters" />
+      <module name="alocacao-recursos-application" options="-parameters" />
+      <module name="alocacao-recursos-core" options="-parameters" />
+      <module name="alocacao-recursos-domain" options="-parameters" />
+      <module name="alocacao-recursos-http" options="-parameters" />
+      <module name="alocacao-recursos-postgres" options="-parameters" />
     </option>
   </component>
 </project>
