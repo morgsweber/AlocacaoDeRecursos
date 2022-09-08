@@ -9,3 +9,8 @@ Este repositório é destinado para o backend do projeto semestral da disciplina
 
 ## Running
 
+- Incluir as variaveis de ambiente:
+  - ``JDBC_DATASOURCE_URL=localhost``
+- E nas VM Options incluir o profile local para testes:
+  - 
+
