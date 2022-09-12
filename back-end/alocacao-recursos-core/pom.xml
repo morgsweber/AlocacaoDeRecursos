@@ -9,7 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.pucrs</groupId>
     <artifactId>alocacao-recursos-core</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.pucrs</groupId>
+            <version>0.0.1-SNAPSHOT</version>
+            <artifactId>alocacao-recursos-domain</artifactId>
+        </dependency>
+    </dependencies>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

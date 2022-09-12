@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>alocacao-recursos</groupId>
     <artifactId>alocacao-recursos-domain</artifactId>
 
     <properties>
