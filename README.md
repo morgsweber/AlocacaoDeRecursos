@@ -13,6 +13,8 @@ Este repositório é destinado para o backend do projeto semestral da disciplina
   - ``export spring.profiles.active=local `` - Para testes locais.
   - ``export spring.profiles.active=prod `` - Para implantar no ambiente.
 
-- Para rodar a aplicacao localmente com o profile local:
-  - ``mvn spring-boot:run -Dspring.profiles.active=local``
+- Para rodar a aplicacao localmente:
+  - Execute o script bash na raíz do projeto com o comando 
+  - ``sh ./run-project.sh``
+  - E verifique a aplicação rodando batendo no endpoint http://localhost:8080/actuator
 
