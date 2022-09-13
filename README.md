@@ -13,6 +13,6 @@ Este repositório é destinado para o backend do projeto semestral da disciplina
   - ``export spring.profiles.active=local `` - Para testes locais.
   - ``export spring.profiles.active=prod `` - Para implantar no ambiente.
 
-- Pode-se utilizar as VM Options para incluir o profile local para testes:
-  - ``-Dspring.profiles.active=local``
+- Para rodar a aplicacao localmente com o profile local:
+  - ``mvn spring-boot:run -Dspring.profiles.active=local``
 
