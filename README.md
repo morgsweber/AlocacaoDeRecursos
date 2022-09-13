@@ -9,3 +9,10 @@ Este repositório é destinado para o backend do projeto semestral da disciplina
 
 ## Running
 
+- Incluir as variaveis de ambiente:
+  - ``export spring.profiles.active=local `` - Para testes locais.
+  - ``export spring.profiles.active=prod `` - Para implantar no ambiente.
+
+- Para rodar a aplicacao localmente com o profile local:
+  - ``mvn spring-boot:run -Dspring.profiles.active=local``
+

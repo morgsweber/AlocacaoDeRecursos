@@ -10,13 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.pucrs</groupId>
-    <artifactId>alocacao-recursos-core</artifactId>
+    <artifactId>alocacao-recursos-business</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.pucrs</groupId>
             <version>0.0.1-SNAPSHOT</version>
-            <artifactId>alocacao-recursos-domain</artifactId>
+            <artifactId>alocacao-recursos-core</artifactId>
         </dependency>
     </dependencies>
 
