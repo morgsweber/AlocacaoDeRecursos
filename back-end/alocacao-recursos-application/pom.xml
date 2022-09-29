@@ -7,6 +7,7 @@
         <groupId>com.pucrs</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.pucrs</groupId>
@@ -40,9 +41,27 @@
         </dependency>
     </dependencies>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
+<!--    <properties>-->
+<!--        <maven.compiler.source>17</maven.compiler.source>-->
+<!--        <maven.compiler.target>17</maven.compiler.target>-->
+<!--    </properties>-->
+
+    	<build>
+    		<plugins>
+    			<plugin>
+    				<groupId>org.springframework.boot</groupId>
+    				<artifactId>spring-boot-maven-plugin</artifactId>
+    				<configuration>
+    					<mainClass>com.pucrs.alocacaorecursos.AlocacaoRecursosApplication</mainClass>
+    					<excludes>
+    						<exclude>
+    							<groupId>org.projectlombok</groupId>
+    							<artifactId>lombok</artifactId>
+    						</exclude>
+    					</excludes>
+    				</configuration>
+    			</plugin>
+    		</plugins>
+    	</build>
 
 </project>
