@@ -11,6 +11,7 @@
 
     <groupId>alocacao-recursos</groupId>
     <artifactId>alocacao-recursos-http</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>

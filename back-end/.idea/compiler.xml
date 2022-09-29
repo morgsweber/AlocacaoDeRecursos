@@ -9,9 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="alocacao-recursos-http" />
         <module name="alocacao-recursos-application" />
+        <module name="alocacao-recursos-business" />
         <module name="alocacao-recursos-domain" />
         <module name="alocacao-recursos-postgres" />
-        <module name="alocacao-recursos-business" />
         <module name="alocacao-recursos-core" />
       </profile>
     </annotationProcessing>
