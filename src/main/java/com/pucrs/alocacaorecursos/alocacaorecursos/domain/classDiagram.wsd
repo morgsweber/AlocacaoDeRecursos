@@ -76,15 +76,32 @@ class LectureGroup{
 package Association{
 
 class Enrollment{
-
+ - LectureGroup: lectureGroup
+ - Student: student
+ + String: getLectureGroupId()
+ + String: getStudentId()
+ 
 }
 
 class LectureRegister{
+- Professor: professor
+- LectureGroup: lectureGroup
+- Lecture: lecture
++ String: getLectureGroupId()
++ String: getProfessorId()
++ String: getLectureId()
 
 }
 
 class Schedule{
-
+- Classroom: classroom   
+- LectureGroup: lectureGroup
+- String: time 
+- String: date
++ String: getLectureGroupId()
++ String: getClassroomId()
++ String: getTime()
++ String: getDate()
 }
 
 }
