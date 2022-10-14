@@ -1,5 +1,6 @@
 package com.pucrs.alocacaorecursos.alocacaorecursos.http.oauth;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -12,6 +13,7 @@ import org.springframework.security.web.SecurityFilterChain;
  * Configures our application with Spring Security to restrict access to our API endpoints.
  */
 @EnableWebSecurity
+@ConditionalOnProperty(prefix = "security", name = "service", havingValue = "true")
 public class SecurityConfig {
 
    @Value("${auth0.audience}")
@@ -41,8 +43,7 @@ public class SecurityConfig {
         indeed intended for our app. Adding our own validator is easy to do:
         */
 
-        NimbusJwtDecoder jwtDecoder = (NimbusJwtDecoder)
-                JwtDecoders.fromOidcIssuerLocation(issuer);
+        NimbusJwtDecoder jwtDecoder = JwtDecoders.fromOidcIssuerLocation(issuer);
 
         OAuth2TokenValidator<Jwt> audienceValidator = new AudienceValidator(audience);
         OAuth2TokenValidator<Jwt> withIssuer = JwtValidators.createDefaultWithIssuer(issuer);
