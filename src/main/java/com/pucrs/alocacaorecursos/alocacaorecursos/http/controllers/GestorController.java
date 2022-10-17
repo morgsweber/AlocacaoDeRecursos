@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 @RestController
 @RequestMapping("/gestor")
-public class ManagerController {
+public class GestorController {
  
      
     @GetMapping("/turmas")
@@ -14,7 +14,7 @@ public class ManagerController {
         System.out.println("requisicao gestorTurmas ok");
         return ResponseEntity.ok().build();
     }
-    @GetMapping("/turmas")
+    @GetMapping("/turmas/aprova")
     public ResponseEntity gestorTurmasAprova() {
         System.out.println("requisicao gestorTurmasAprova ok");
         return ResponseEntity.ok().build();
