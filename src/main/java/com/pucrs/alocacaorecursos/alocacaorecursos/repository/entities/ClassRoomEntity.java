@@ -9,21 +9,19 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "professor")
-public class TeacherEntity {
+@Table(name = "sala")
+public class ClassRoomEntity {
 
     @Id
     private String id;
 
-    @Column(name = "nome")
-    private String name;
+    @Column(name = "predio")
+    private String building;
 
-    @Column(name = "idade")
-    private int age;
+    @Column(name = "capacidade")
+    private int capacity;
 
-    @Column(name = "cpf")
-    private String cpf;
-
-    @Column(name = "area")
-    private String area;
+    @Column(name = "tipo")
+    private String type;
+    
 }
