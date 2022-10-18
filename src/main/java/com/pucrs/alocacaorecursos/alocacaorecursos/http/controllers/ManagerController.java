@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/gestor")
 public class ManagerController {
  
-     
     @GetMapping("/turmas")
     public ResponseEntity gestorTurmas() {
         System.out.println("requisicao gestorTurmas ok");
         return ResponseEntity.ok().build();
     }
+
     @GetMapping("/turmas/aprova")
     public ResponseEntity gestorTurmasAprova() {
         System.out.println("requisicao gestorTurmasAprova ok");
