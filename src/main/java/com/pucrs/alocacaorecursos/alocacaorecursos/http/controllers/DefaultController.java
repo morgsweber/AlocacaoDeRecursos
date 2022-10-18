@@ -1,4 +1,4 @@
-package com.pucrs.alocacaorecursos.alocacaorecursos.http;
+package com.pucrs.alocacaorecursos.alocacaorecursos.http.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
