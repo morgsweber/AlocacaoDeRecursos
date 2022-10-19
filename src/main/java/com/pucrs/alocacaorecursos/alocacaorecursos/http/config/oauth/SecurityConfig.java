@@ -1,4 +1,4 @@
-package com.pucrs.alocacaorecursos.alocacaorecursos.http.oauth;
+package com.pucrs.alocacaorecursos.alocacaorecursos.http.config.oauth;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -29,10 +29,18 @@ public class SecurityConfig {
         an OAuth2 Resource Server, using JWT validation.
         */
         http.authorizeRequests()
-                .mvcMatchers("/public").permitAll()
-                .mvcMatchers("/private").authenticated()
-                .and().cors()
+                .mvcMatchers("/*").permitAll()
+                .antMatchers("/h2-console/**").permitAll()
+        
+                // .mvcMatchers("/*").permitAll()
+                // .mvcMatchers("/h2-console/*").permitAll()
+                // .mvcMatchers("/private").authenticated()
+                // .and().cors()
                 .and().oauth2ResourceServer().jwt();
+
+        http.csrf().disable();
+        http.headers().frameOptions().disable();
+
         return http.build();
     }
 

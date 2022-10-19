@@ -1,4 +1,4 @@
-package com.pucrs.alocacaorecursos.alocacaorecursos.http.oauth;
+package com.pucrs.alocacaorecursos.alocacaorecursos.http.config.oauth;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.security.oauth2.core.OAuth2Error;
 import org.springframework.security.oauth2.core.OAuth2TokenValidator;
