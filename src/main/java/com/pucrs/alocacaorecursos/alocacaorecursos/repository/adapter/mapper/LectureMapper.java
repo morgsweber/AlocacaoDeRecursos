@@ -7,10 +7,6 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.LectureEn
 
 public class LectureMapper {
 
-    private String id;
-    private String name;
-    private String content;
-
     public static Lecture mapFrom(final LectureEntity entity) {
         Lecture domain = new Lecture();
 

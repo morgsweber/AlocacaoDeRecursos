@@ -16,12 +16,6 @@ public class DefaultController {
     @Autowired
     private LecturePortOutput lecturePortOutput;
 
-    @GetMapping("/teste")
-    public ResponseEntity testRoute() {
-        System.out.println("requisicao ok");
-        return ResponseEntity.ok().build();
-    }
-
     @GetMapping("/lecture/{id}")
     public ResponseEntity<LectureDTO> getLectures(@PathVariable String id) {
 
