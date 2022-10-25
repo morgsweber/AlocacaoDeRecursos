@@ -2,8 +2,9 @@ package com.pucrs.alocacaorecursos.alocacaorecursos.core.output;
 
 import java.util.List;
 
-import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Lecture;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Student;
 
 public interface StudentPortOutput {
-    List<Lecture> getLectures();
+    List<Student> getStudents();
+    Student getStudent(String studentId);
 }

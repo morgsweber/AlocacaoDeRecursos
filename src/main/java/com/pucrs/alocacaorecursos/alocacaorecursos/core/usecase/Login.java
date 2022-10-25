@@ -5,5 +5,5 @@ public interface Login {
 
     boolean enterPassword(String password);
 
-    boolean login(int userId);
+    boolean login(String userId);
 }
