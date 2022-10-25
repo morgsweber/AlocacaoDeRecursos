@@ -1,0 +1,20 @@
+[
+    {
+        "disciplina": "Projeto e Otimizacao de Algoritmos",
+        "predio": "32",
+        "sala": "413",
+        "horario_inicio": "17:30",
+        "horario_fim": "19:00",
+        "dia_semana": "segunda",
+        "dia_mes": "22/10"
+    },
+    {
+        "disciplina": "Projeto e Otimizacao de Algoritmos",
+        "predio": "living",
+        "sala": "317",
+        "horario_inicio": "17:30",
+        "horario_fim": "19:00",
+        "dia_semana": "segunda",
+        "dia_mes": "23/10"
+    }
+]
