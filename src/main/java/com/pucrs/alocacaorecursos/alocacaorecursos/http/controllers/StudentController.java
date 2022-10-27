@@ -1,18 +1,29 @@
 package com.pucrs.alocacaorecursos.alocacaorecursos.http.controllers;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.ScheduleWeekView;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.scheduleweek.ScheduleWeekResponse;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 @RequestMapping("/aluno")
 public class StudentController {
 
+    @Autowired
+    private ScheduleWeekView scheduleResponse;
+
     @GetMapping("/horarios")
-    public ResponseEntity alunoHorarios() {
+    public ResponseEntity<List<ScheduleWeekResponse>> alunoHorarios(@PathVariable final String studentId) {
         System.out.println("requisicao alunoHorarios ok");
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(scheduleResponse.getListSchedule(studentId));
     }
     @GetMapping("/turmas")
     public ResponseEntity alunoTurmas() {
