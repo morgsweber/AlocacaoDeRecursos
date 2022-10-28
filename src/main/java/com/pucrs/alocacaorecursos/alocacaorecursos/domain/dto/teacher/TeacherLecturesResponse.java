@@ -1,10 +1,10 @@
 package com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@Builder
+@AllArgsConstructor
 public class TeacherLecturesResponse {
 
     private String discipline;

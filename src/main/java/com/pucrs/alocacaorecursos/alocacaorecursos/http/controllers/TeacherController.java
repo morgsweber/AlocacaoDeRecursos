@@ -1,12 +1,23 @@
 package com.pucrs.alocacaorecursos.alocacaorecursos.http.controllers;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.TeacherLecturesView;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher.TeacherLecturesResponse;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 @RequestMapping("/professor")
 public class TeacherController {
+
+    @Autowired
+    private TeacherLecturesView teacherLecturesView;
 
     @GetMapping("/horarios")
     public ResponseEntity professorHorarios() {
@@ -26,9 +37,10 @@ public class TeacherController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/disciplinas")
-    public ResponseEntity professorDisciplinas() {
+    @GetMapping("/disciplinas/{id}")
+    public ResponseEntity<List<TeacherLecturesResponse>> professorDisciplinas(@PathVariable String id) {
         System.out.println("requisicao professorCronograma ok");
-        return ResponseEntity.ok().build();
+
+        return ResponseEntity.ok().body(teacherLecturesView.getTeacherLectures(id));
     }
 }
