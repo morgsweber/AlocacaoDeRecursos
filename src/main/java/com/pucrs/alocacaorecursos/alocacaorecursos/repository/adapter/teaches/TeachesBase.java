@@ -8,5 +8,5 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.TeachesEn
 
 public interface TeachesBase extends CrudRepository<TeachesEntity, String> {
     
-    List<TeachesEntity> findByProfessorId(final String id);
+    List<TeachesEntity> findByTeacherId(final String id);
 }

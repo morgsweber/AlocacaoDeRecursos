@@ -7,8 +7,8 @@ import lombok.Setter;
 @Setter
 public class Teaches {
 
-    private String teacherId;    
-    private String groupId;
-    private String disciplinaId;
+    private Integer teacherId;    
+    private Integer groupId;
+    private Integer disciplinaId;
     
 }

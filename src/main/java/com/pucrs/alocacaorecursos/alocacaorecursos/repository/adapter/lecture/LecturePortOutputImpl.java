@@ -17,7 +17,7 @@ public class LecturePortOutputImpl implements LecturePortOutput {
     private LectureBase repository;
 
     @Override
-    public Lecture getLecture(String id) {
+    public Lecture getLecture(Integer id) {
         Optional<LectureEntity> optional = repository.findById(id);
 
         if (optional.isEmpty()) {

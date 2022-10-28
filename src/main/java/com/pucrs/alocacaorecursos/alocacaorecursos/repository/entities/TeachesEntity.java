@@ -2,6 +2,7 @@ package com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -11,13 +12,14 @@ import lombok.Data;
 @Table(name = "ministra")
 public class TeachesEntity {
     
+    @Id
     @Column(name = "professor_id")
-    private String teacherId;
+    private Integer teacherId;
     
     @Column(name = "turma_id")
-    private String groupId;
+    private Integer groupId;
 
     @Column(name = "disciplina_id")
-    private String disciplinaId;
+    private Integer disciplinaId;
 }
 
