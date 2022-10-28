@@ -13,13 +13,21 @@ public class TeacherController {
         System.out.println("requisicao professorHorarios ok");
         return ResponseEntity.ok().build();
     }
+    
     @GetMapping("/turmas")
     public ResponseEntity professorTurmas() {
         System.out.println("requisicao professorTurmas ok");
         return ResponseEntity.ok().build();
     }
+
     @GetMapping("/cronograma")
     public ResponseEntity professorCronograma() {
+        System.out.println("requisicao professorCronograma ok");
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/disciplinas")
+    public ResponseEntity professorDisciplinas() {
         System.out.println("requisicao professorCronograma ok");
         return ResponseEntity.ok().build();
     }
