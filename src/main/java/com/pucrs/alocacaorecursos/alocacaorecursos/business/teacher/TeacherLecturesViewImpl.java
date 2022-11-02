@@ -2,6 +2,7 @@ package com.pucrs.alocacaorecursos.alocacaorecursos.business.teacher;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -32,18 +33,26 @@ public class TeacherLecturesViewImpl implements TeacherLecturesView {
     @Override
     public List<TeacherLecturesResponse> getTeacherLectures(String teacherId) {
 
-        //TODO adicionar comportamento de percorrer itens para montar responses
         final List<Teaches> teaches = teachesPortOutput.getTeaches(teacherId);
-
-        final Integer lectureId = teaches.get(0).getDisciplinaId(); //Ver uma forma de pegar os id da lista retornada para realizar a busca na tabela disciplinas
-        final Lecture lecture = lecturePortOutput.getLecture(lectureId);
-        final Teacher teacher = teacherPortOutput.getTeacher(teacherId);
-
-        System.out.println("Id:" + lecture.getId());
 
         final List<TeacherLecturesResponse> response = new ArrayList();
 
-        teaches.forEach(item -> response.add(new TeacherLecturesResponse(lecture.getName(),teacher.getName(),null)));
+        int index = teaches.size()-1;
+
+        teaches.forEach(item -> {
+
+            final Integer lectureId = teaches.get(index).getDisciplinaId();
+            
+            final Lecture lecture = lecturePortOutput.getLecture(lectureId);
+            final Teacher teacher = teacherPortOutput.getTeacher(teacherId);
+
+            System.out.println("Id:" + lecture.getId());
+
+            response.add(new TeacherLecturesResponse(lecture.getName(),teacher.getName(),null));
+
+            teaches.remove(index);
+
+        });
         
         return response;
     }

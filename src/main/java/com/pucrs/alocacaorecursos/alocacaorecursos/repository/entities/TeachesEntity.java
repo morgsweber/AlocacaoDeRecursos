@@ -13,6 +13,8 @@ import lombok.Data;
 public class TeachesEntity {
     
     @Id
+    private Integer id;
+    
     @Column(name = "professor_id")
     private Integer teacherId;
     
