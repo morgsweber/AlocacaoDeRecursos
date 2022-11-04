@@ -54,9 +54,13 @@ public class TeacherLecturesViewImpl implements TeacherLecturesView {
             final Integer lectureGroupId = teaches.get(getIndex(index)).getGroupId();
 
             final LectureGroup lecturegroup = lectureGroupPortOutput.getLectureGroup(String.valueOf(lectureGroupId));
-            final Lecture lecture = lecturePortOutput.getLecture(lectureId);            
+            final Lecture lecture = lecturePortOutput.getLecture(lectureId);
+            
+            if(Objects.nonNull(lecture) && Objects.nonNull(lecturegroup)) {
 
-            response.add(new TeacherLecturesResponse(lecture.getName(),teacher.getName(),lecturegroup.getId()));
+                response.add(new TeacherLecturesResponse(lecture.getName(),teacher.getName(),lecturegroup.getId()));
+
+            }           
 
             index--;
 

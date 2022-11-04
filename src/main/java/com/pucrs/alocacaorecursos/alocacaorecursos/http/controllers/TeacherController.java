@@ -39,13 +39,9 @@ public class TeacherController {
 
     @GetMapping("/disciplinas/{id}")
     public ResponseEntity<List<TeacherLecturesResponse>> professorDisciplinas(@PathVariable String id) {
-        System.out.println("requisicao professorCronograma ok");
-        return ResponseEntity.ok().body(teacherLecturesView.getTeacherLectures(id));
 
-        // try {
-        //     return ResponseEntity.ok().body(teacherLecturesView.getTeacherLectures(id));
-        // } catch (Exception e) {
-        //     return ResponseEntity.notFound().build();
-        // }        
+        List<TeacherLecturesResponse> response = teacherLecturesView.getTeacherLectures(id);
+
+        return !response.isEmpty() ? ResponseEntity.ok().body(response) : ResponseEntity.notFound().build();
     }
 }
