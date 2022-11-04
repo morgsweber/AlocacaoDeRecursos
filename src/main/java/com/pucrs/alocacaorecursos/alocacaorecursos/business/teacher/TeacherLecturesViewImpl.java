@@ -10,10 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.TeacherLecturesView;
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LectureGroupPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LecturePortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.TeacherPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.TeachesPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Lecture;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.LectureGroup;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Teacher;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Teaches;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher.TeacherLecturesResponse;
@@ -29,32 +31,42 @@ public class TeacherLecturesViewImpl implements TeacherLecturesView {
 
     @Autowired
     private TeacherPortOutput teacherPortOutput;
+
+    @Autowired
+    private LectureGroupPortOutput lectureGroupPortOutput;
+
+    int index = 0;
     
     @Override
     public List<TeacherLecturesResponse> getTeacherLectures(String teacherId) {
 
         final List<Teaches> teaches = teachesPortOutput.getTeaches(teacherId);
 
+        final Teacher teacher = teacherPortOutput.getTeacher(teacherId);
+
         final List<TeacherLecturesResponse> response = new ArrayList();
+        
+        index = teaches.size()-1;
 
-        int index = teaches.size()-1;
+        teaches.forEach(item -> {            
 
-        teaches.forEach(item -> {
+            final Integer lectureId = teaches.get(getIndex(index)).getDisciplinaId();
+            final Integer lectureGroupId = teaches.get(getIndex(index)).getGroupId();
 
-            final Integer lectureId = teaches.get(index).getDisciplinaId();
-            
-            final Lecture lecture = lecturePortOutput.getLecture(lectureId);
-            final Teacher teacher = teacherPortOutput.getTeacher(teacherId);
+            final LectureGroup lecturegroup = lectureGroupPortOutput.getLectureGroup(String.valueOf(lectureGroupId));
+            final Lecture lecture = lecturePortOutput.getLecture(lectureId);            
 
-            System.out.println("Id:" + lecture.getId());
+            response.add(new TeacherLecturesResponse(lecture.getName(),teacher.getName(),lecturegroup.getId()));
 
-            response.add(new TeacherLecturesResponse(lecture.getName(),teacher.getName(),null));
-
-            teaches.remove(index);
+            index--;
 
         });
         
         return response;
+    }
+
+    private int getIndex(int length) {
+        return length <= 0 ? 0 : length;
     }
     
 }
