@@ -5,5 +5,5 @@ import java.util.List;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Student;
 
 public interface StudentPortOutput {
-    List<String> getEnrolledClassesId(String studentId);
+    List<Integer> getEnrolledClassesId(String studentId);
 }

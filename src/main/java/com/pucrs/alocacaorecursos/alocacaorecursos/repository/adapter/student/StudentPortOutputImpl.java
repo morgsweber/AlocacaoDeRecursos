@@ -9,15 +9,20 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.StudentPortOutput
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Student;
 
 import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.StudentBase;
+import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.enroll.EnrollBase;
 
 public class StudentPortOutputImpl implements StudentPortOutput {
 
     @Autowired
     private StudentBase studentRepository;
 
+    @Autowired
+    private EnrollBase enrollRepository;
+
     @Override
-    public List<String> getEnrolledClassesId(String studentId){
-        // como q faz p buscar as turmas q aluno ta matriculado??
-        return null;
+    public List<Integer> getEnrolledClassesId(String studentId){
+
+        List<Integer> list = enrollRepository.findLectureGroupByStudentId(Integer.parseInt(studentId));
+        return list;
     }
 }

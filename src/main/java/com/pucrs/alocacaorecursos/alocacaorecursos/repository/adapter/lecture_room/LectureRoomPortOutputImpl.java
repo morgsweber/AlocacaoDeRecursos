@@ -14,6 +14,7 @@ import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.core.output.Lecture
 import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.*;
 import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.mapper.LectureRoomMapper;;
 
+@Repository
 public class LectureRoomPortOutputImpl implements LectureRoomPortOutput{
 
     @Autowired

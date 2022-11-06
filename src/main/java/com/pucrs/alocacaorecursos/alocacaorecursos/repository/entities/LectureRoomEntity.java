@@ -27,6 +27,6 @@ public class LectureRoomEntity {
     private String scheduled;
 
     @Column(name = "dia")
-    private LocalDateTime dayOfWeek;
+    private LocalDateTime day;
 
 }

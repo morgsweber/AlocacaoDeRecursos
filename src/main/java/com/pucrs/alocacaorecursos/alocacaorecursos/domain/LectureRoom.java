@@ -13,6 +13,6 @@ public class LectureRoom {
     private int roomId;
     private String description;
     private String scheduled;
-    private LocalDateTime dayOfWeek;
+    private LocalDateTime day;
 
 }

@@ -17,7 +17,7 @@ public class LectureRoomMapper {
             domain.setRoomId(getNonNull(entity.getRoomId()));
             domain.setDescription(getNonNull(entity.getDescription()));
             domain.setScheduled(getNonNull(entity.getScheduled()));
-            domain.setDayOfWeek(getNonNull(entity.getDayOfWeek()));
+            domain.setDay(getNonNull(entity.getDay()));
         }
 
         return domain;
