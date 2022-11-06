@@ -2,11 +2,12 @@ package com.pucrs.alocacaorecursos.alocacaorecursos.core.usecase;
 
 import java.util.List;
 
-import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_view.LectureViewDTO;
-import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.LectureDTO;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.scheduleweek.ScheduleWeekResponse;
 
+import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.*;
+import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_view.LectureViewDTO;
 import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_timeline.LectureScheduleDTO;
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.weekly_schedule.LectureClassroomScheduleDTO;
+
 public interface LecturesUserView {
     /*
      * Retorna o cronograma semanal do usuario (professor ou aluno)
@@ -15,7 +16,7 @@ public interface LecturesUserView {
      * - dias da semana 
      * - horario 
      */
-    List<LectureClassroomScheduleDTO> getAllWeeklyLecturesSchedules(String userId, String startWeek, String endWeek);
+    List<ScheduleWeekResponse> getAllWeeklyLecturesSchedules(String userId, String startWeek, String endWeek);
 
     /*
      * Retorna todas as disciplinas em que o usuario esta matriculado/ministra

@@ -11,8 +11,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "turma_aluno")
-public class LectureRoom {
+@Table(name = "turma_sala")
+public class LectureRoomEntity {
 
     @Id
     private int groupId;
