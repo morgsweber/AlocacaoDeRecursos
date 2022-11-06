@@ -20,7 +20,7 @@ public class EnrollId implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        EntollId enrollId = (EnrollId) o;
+        EnrollId enrollId = (EnrollId) o;
         return lectureGroupId.equals(enrollId.lectureGroupId) &&
                studentId.equals(enrollId.studentId);
     }

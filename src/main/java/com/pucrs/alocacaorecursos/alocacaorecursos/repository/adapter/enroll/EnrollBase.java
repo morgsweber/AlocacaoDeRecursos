@@ -3,8 +3,10 @@ package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.EnrollEntity;
-import com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.EnrollId;
+import java.util.List;
+
+import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.EnrollEntity;
+import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.EnrollId;
 
 public interface EnrollBase extends CrudRepository<EnrollEntity, EnrollId>{
 

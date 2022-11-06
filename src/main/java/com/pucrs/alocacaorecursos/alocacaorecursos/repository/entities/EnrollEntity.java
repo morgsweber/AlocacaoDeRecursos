@@ -13,7 +13,7 @@ import lombok.Data;
 @Entity
 @Table(name = "turma_aluno")
 @IdClass(EnrollId.class)
-public class EnrollEntity{
+public class EnrollEntity implements Serializable{
     
     @Id
     @Column(name = "turma_id")

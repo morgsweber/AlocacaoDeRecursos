@@ -16,7 +16,7 @@ public class EnrollPortOutputImpl implements EnrollPortOutput {
     @Override
     public List<Integer> getLectureGroupByStudentId(Integer studentId){
 
-        ArrayList<Integer> list = enrollRepository.findLectureGroupByStudentId(studentId);
+        List<Integer> list = enrollRepository.findLectureGroupByStudentId(studentId);
         return list;
     }
 }
