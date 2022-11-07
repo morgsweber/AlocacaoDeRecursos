@@ -1,0 +1,38 @@
+[
+    {
+        "disciplina": "Pratica em Eng Software",
+        "nome_professor": "Azriel Mjdenbaum",
+        "turma": "30",
+        "descricao": "Trocar sala x por lab y",
+        "sala": "314",
+        "laboratorio": "317",
+        "troca": true
+    },
+    {
+        "disciplina": "Pratica em Eng Software",
+        "nome_professor": "Azriel Mjdenbaum",
+        "turma": "30",
+        "descricao": "Trocar sala x por lab y",
+        "sala": "314",
+        "laboratorio": "317",
+        "troca": false
+    },
+    {
+        "disciplina": "Pratica em Eng Software",
+        "nome_professor": "Azriel Mjdenbaum",
+        "turma": "30",
+        "descricao": "Trocar sala x por lab y",
+        "sala": "314",
+        "laboratorio": "317",
+        "troca": true
+    },
+    {
+        "disciplina": "Pratica em Eng Software",
+        "nome_professor": "Azriel Mjdenbaum",
+        "turma": "30",
+        "descricao": "Trocar sala x por lab y",
+        "sala": "314",
+        "laboratorio": "317",
+        "troca": true
+    }
+]

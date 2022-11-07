@@ -13,6 +13,7 @@ import lombok.Data;
 public class LectureEntity {
     
     @Id
+    @Column(name = "disciplina_id")
     private String id;
 
     @Column(name = "nome")
