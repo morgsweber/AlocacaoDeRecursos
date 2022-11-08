@@ -14,7 +14,7 @@ public class LectureEntity {
     
     @Id
     @Column(name = "disciplina_id")
-    private String id;
+    private Integer id;
 
     @Column(name = "nome")
     private String name;

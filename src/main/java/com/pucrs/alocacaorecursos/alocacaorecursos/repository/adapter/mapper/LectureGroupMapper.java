@@ -18,7 +18,7 @@ public class LectureGroupMapper {
         return domain;
     }
 
-    private static String getNonNull(final String item) {
+    private static Integer getNonNull(final Integer item) {
         return Objects.nonNull(item) ? item : null;
     }
     

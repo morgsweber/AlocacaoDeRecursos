@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class ClassRoom {
 
-    private String id;
+    private Integer id;
     private String building;
     private int capacity;
     private String type;

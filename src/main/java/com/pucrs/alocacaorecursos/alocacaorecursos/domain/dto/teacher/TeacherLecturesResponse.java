@@ -9,6 +9,6 @@ public class TeacherLecturesResponse {
 
     private String discipline;
     private String teacherName;
-    private String groupId;
+    private Integer groupId;
 
 }

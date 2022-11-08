@@ -1,3 +1,13 @@
+drop table if exists aluno CASCADE;
+drop table if exists disciplina CASCADE;
+drop table if exists ministra CASCADE;
+drop table if exists professor CASCADE;
+drop table if exists sala CASCADE;
+drop table if exists turma CASCADE;
+drop table if exists turma_aluno CASCADE;
+drop table if exists turma_sala CASCADE;
+drop table if exists pedido CASCADE;
+
 CREATE TABLE aluno
 (
  aluno_id  serial primary key,

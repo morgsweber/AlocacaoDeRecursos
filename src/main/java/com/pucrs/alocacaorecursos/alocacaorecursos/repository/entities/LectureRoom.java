@@ -18,7 +18,7 @@ public class LectureRoom {
     private int groupId;
 
     @Column(name = "sala_id")
-    private int roomId;
+    private Integer roomId;
 
     @Column(name = "descricao")
     private String description;

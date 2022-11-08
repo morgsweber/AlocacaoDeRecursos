@@ -15,7 +15,7 @@ public class LectureGroupPortOutputImpl implements LectureGroupPortOutput {
 
     @Override
     public LectureGroup getLectureGroup(String id) {
-        return LectureGroupMapper.mapFrom(lectureGroupBase.findById(id));
+        return LectureGroupMapper.mapFrom(lectureGroupBase.findById(Integer.parseInt(id)));
     }
     
 }

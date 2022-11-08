@@ -14,5 +14,5 @@ public class LectureGroupEntity {
 
     @Id
     @Column(name = "turma_id")
-    private String id;
+    private Integer id;
 }

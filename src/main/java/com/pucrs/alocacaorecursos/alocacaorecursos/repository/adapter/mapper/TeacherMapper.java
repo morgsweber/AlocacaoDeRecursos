@@ -21,4 +21,8 @@ public class TeacherMapper {
     private static String getNonNull(final String item) {
         return Objects.nonNull(item) ? item : null;
     }
+
+    private static Integer getNonNull(final Integer item) {
+        return Objects.nonNull(item) ? item : null;
+    }
 }
