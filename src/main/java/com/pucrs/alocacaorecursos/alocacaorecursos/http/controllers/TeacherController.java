@@ -24,12 +24,6 @@ public class TeacherController {
         System.out.println("requisicao professorHorarios ok");
         return ResponseEntity.ok().build();
     }
-    
-    @GetMapping("/turmas")
-    public ResponseEntity professorTurmas() {
-        System.out.println("requisicao professorTurmas ok");
-        return ResponseEntity.ok().build();
-    }
 
     @GetMapping("/cronograma")
     public ResponseEntity professorCronograma() {
@@ -37,8 +31,8 @@ public class TeacherController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/disciplinas/{id}")
-    public ResponseEntity<List<TeacherLecturesResponse>> professorDisciplinas(@PathVariable String id) {
+    @GetMapping("/turmas/{id}")
+    public ResponseEntity<List<TeacherLecturesResponse>> professorTurmas(@PathVariable String id) {
 
         List<TeacherLecturesResponse> response = teacherLecturesView.getTeacherLectures(id);
 
