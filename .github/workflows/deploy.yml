@@ -4,7 +4,7 @@ on:
   workflow_dispatch: {}
 
 env:
-  applicationfolder: back-end
+  applicationfolder: ./
   AWS_REGION: us-east-1
   S3BUCKET: alocacao-backend-webappdeploymentbucket-rz6xylar3dda #created by cloud
 
