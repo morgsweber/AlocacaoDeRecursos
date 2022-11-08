@@ -4,7 +4,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Request {
+public class TeacherRequest {
     private int professorId, currentClassroomId, newLocation, requestId;
     private String justification;
 }

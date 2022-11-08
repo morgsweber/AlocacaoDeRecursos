@@ -2,7 +2,7 @@ package com.pucrs.alocacaorecursos.alocacaorecursos.core.usecase;
 
 import java.util.List;
 
-import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Request;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.TeacherRequest;
 
 public interface RequestClassroomExchange {
     /*
@@ -26,6 +26,6 @@ public interface RequestClassroomExchange {
      */
     void declineRequest(int requestId, boolean isDecline);
      
-    List<Request> getAllRequests(); 
+    List<TeacherRequest> getAllRequests(); 
 
 }
