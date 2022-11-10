@@ -11,8 +11,10 @@ import lombok.Data;
 @Entity
 @Table(name = "aluno")
 public class StudentEntity {
+
     @Id
-    private String id;
+    @Column(name = "aluno_id")
+    private Integer id;
 
     @Column(name = "nome")
     private String name;

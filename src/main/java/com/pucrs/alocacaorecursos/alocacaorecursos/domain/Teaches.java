@@ -5,11 +5,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ClassRoom {
+public class Teaches {
 
-    private Integer id;
-    private String building;
-    private int capacity;
-    private String type;
+    private Integer teacherId;    
+    private Integer groupId;
+    private Integer disciplinaId;
     
 }

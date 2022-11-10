@@ -6,5 +6,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class LectureGroup {
-    private String id;
+    private Integer id;
 }

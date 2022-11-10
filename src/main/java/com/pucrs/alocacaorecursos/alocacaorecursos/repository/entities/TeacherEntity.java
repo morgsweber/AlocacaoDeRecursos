@@ -13,7 +13,8 @@ import lombok.Data;
 public class TeacherEntity {
 
     @Id
-    private String id;
+    @Column(name = "professor_id")
+    private Integer id;
 
     @Column(name = "nome")
     private String name;

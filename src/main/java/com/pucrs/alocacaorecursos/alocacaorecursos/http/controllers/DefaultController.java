@@ -19,7 +19,7 @@ public class DefaultController {
     @GetMapping("/lecture/{id}")
     public ResponseEntity<LectureDTO> getLectures(@PathVariable String id) {
 
-        LectureDTO dto = LectureDTOMapper.mapFrom(lecturePortOutput.getLecture(id));
+        LectureDTO dto = LectureDTOMapper.mapFrom(lecturePortOutput.getLecture(Integer.parseInt(id)));
 
         System.out.println("requisicao ok");
         return ResponseEntity.ok().body(dto);

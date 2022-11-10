@@ -1,5 +1,6 @@
 package com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,5 +13,6 @@ import lombok.Data;
 public class LectureGroupEntity {
 
     @Id
-    private String id;
+    @Column(name = "turma_id")
+    private Integer id;
 }
