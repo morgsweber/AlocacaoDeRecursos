@@ -7,10 +7,12 @@ import lombok.Getter;
 @Builder
 public class RequestDTO{
 
-    private String lecture;
-    private String teacher;
-    private String lectureGroup;
-    private String currentClassroom;
-    private String newClassroom;
+    private String lectureName;
+    private String teacherName;
+    private String lectureGroupId;
+    private String currentClassroomId;
+    private String currentClassroomType;
+    private String newClassroomId;
+    private String newClassroomType;
     private String motive;        
 }
