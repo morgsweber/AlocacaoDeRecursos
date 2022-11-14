@@ -6,6 +6,6 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher.TeacherLec
 
 public interface TeacherLecturesView {
     
-    List<TeacherLecturesResponse> getTeacherLectures(final String teacherId);
+    List<TeacherLecturesResponse> getTeacherLectures(final Integer teacherId);
     
 }

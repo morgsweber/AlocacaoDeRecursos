@@ -25,7 +25,7 @@ public class TeacherLecturesViewImpl implements TeacherLecturesView {
     private LecturePortOutput lecturePortOutput;
     
     @Override
-    public List<TeacherLecturesResponse> getTeacherLectures(String teacherId) {
+    public List<TeacherLecturesResponse> getTeacherLectures(Integer teacherId) {
 
         //TODO adicionar comportamento de percorrer itens para montar responses
         final List<Teaches> teaches = teachesPortOutput.getTeaches(teacherId);

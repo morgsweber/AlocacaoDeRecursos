@@ -2,9 +2,11 @@ package com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.scheduleweek;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
+import lombok.AllArgsConstructor;
 
 @Getter
-@Builder
+@AllArgsConstructor
 public class ScheduleWeekResponse {
 
     private String lecture;

@@ -3,15 +3,15 @@ package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.entitie
 import java.io.Serializable;
 import java.util.Objects;
 
-public class EnrollId implements Serializable {
+public class EnrollIdEntity implements Serializable {
 
     private Integer lectureGroupId;
     private Integer studentId;
 
-    public EnrollId() {
+    public EnrollIdEntity() {
     }
 
-    public EnrollId(Integer lectureGroupId, Integer studentId) {
+    public EnrollIdEntity(Integer lectureGroupId, Integer studentId) {
         this.lectureGroupId = lectureGroupId;
         this.studentId = studentId;
     }
@@ -20,7 +20,7 @@ public class EnrollId implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        EnrollId enrollId = (EnrollId) o;
+        EnrollIdEntity enrollId = (EnrollIdEntity) o;
         return lectureGroupId.equals(enrollId.lectureGroupId) &&
                studentId.equals(enrollId.studentId);
     }

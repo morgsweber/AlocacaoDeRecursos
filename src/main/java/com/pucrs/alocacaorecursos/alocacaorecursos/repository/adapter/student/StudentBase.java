@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.StudentEntity;
 
 
-public interface StudentBase extends CrudRepository<StudentEntity, String>{
+public interface StudentBase extends CrudRepository<StudentEntity, Integer>{
     
 }

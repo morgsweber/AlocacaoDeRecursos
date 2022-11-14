@@ -21,7 +21,7 @@ public class StudentController {
     private ScheduleWeekView scheduleResponse;
 
     @GetMapping("/horarios")
-    public ResponseEntity<List<ScheduleWeekResponse>> alunoHorarios(@PathVariable final String studentId) {
+    public ResponseEntity<List<ScheduleWeekResponse>> alunoHorarios(@PathVariable final Integer studentId) {
         System.out.println("requisicao alunoHorarios ok");
         return ResponseEntity.ok(scheduleResponse.getListSchedule(studentId));
     }

@@ -18,13 +18,24 @@ public class LecturePortOutputImpl implements LecturePortOutput {
 
     @Override
     public Lecture getLecture(Integer id) {
-        Optional<LectureEntity> optional = repository.findById(String.valueOf(id));
+        Optional<LectureEntity> optional = repository.findById(id);
 
         if (optional.isEmpty()) {
             return null;
         }
 
         return LectureMapper.mapFrom(optional.get());
+    }
+
+    @Override
+    public String getLectureName(Integer id){
+        Optional<LectureEntity> optional = repository.findById(id);
+
+        if (optional.isEmpty()) {
+            return null;
+        }
+
+        return LectureMapper.mapFrom(optional.get()).getName();
     }
     
 }

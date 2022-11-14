@@ -12,5 +12,5 @@ import lombok.Data;
 public class LectureGroupEntity {
 
     @Id
-    private String id;
+    private Integer id;
 }

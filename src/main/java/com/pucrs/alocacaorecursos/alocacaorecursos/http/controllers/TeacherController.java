@@ -38,7 +38,7 @@ public class TeacherController {
     }
 
     @GetMapping("/disciplinas/{id}")
-    public ResponseEntity<List<TeacherLecturesResponse>> professorDisciplinas(@PathVariable String id) {
+    public ResponseEntity<List<TeacherLecturesResponse>> professorDisciplinas(@PathVariable Integer id) {
         System.out.println("requisicao professorCronograma ok");
 
         return ResponseEntity.ok().body(teacherLecturesView.getTeacherLectures(id));

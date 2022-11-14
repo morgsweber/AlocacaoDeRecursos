@@ -15,13 +15,23 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.TeachesEn
 @Repository
 public class TeachesPortOutputImpl implements TeachesPortOutput {
 
+    @Override
+    public List<Teaches> getTeachesByLectureGroup(Integer lectureGroupId) {
+        List<TeachesEntity> list = teachesRepository.findByGroupId(lectureGroupId);
+        List<Teaches> listMapped = new ArrayList<>();
+
+        listMapped = list.stream().map(item -> TeachesMapper.mapFrom(item)).collect(Collectors.toList());
+
+        return list.isEmpty() ? new ArrayList<>() : listMapped;
+    }
+
     @Autowired
     private TeachesBase teachesRepository;
 
     @Override
-    public List<Teaches> getTeaches(String teacherId) {
+    public List<Teaches> getTeaches(Integer teacherId) {
 
-        List<TeachesEntity> list = teachesRepository.findByTeacherId(Integer.parseInt(teacherId));
+        List<TeachesEntity> list = teachesRepository.findByTeacherId(teacherId);
         System.out.println("Id:"+ list.get(0));
         List<Teaches> listMapped = new ArrayList<>();
 

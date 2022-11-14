@@ -12,7 +12,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "turma_aluno")
-@IdClass(EnrollId.class)
+@IdClass(EnrollIdEntity.class)
 public class EnrollEntity implements Serializable{
     
     @Id

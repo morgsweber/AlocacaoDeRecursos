@@ -7,11 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.ScheduleWeekView;
-import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.StudentPortOutput;
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.ClassroomPortOutput;
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LecturePortOutput;
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.TeachesPortOutput;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.ClassRoom;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.LectureRoom;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.scheduleweek.ScheduleWeekResponse;
 
+import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.core.output.EnrollPortOutput;
 import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LectureRoomPortOutput;
+
 
 @Component
 public class ScheduleWeekViewImpl implements ScheduleWeekView {
@@ -20,33 +25,59 @@ public class ScheduleWeekViewImpl implements ScheduleWeekView {
     private LectureRoomPortOutput lectureRoomPortOutput;
 
     @Autowired
-    private StudentPortOutput studentPortOutput;
+    private TeachesPortOutput teachesPortOutput;
+
+    @Autowired 
+    private LecturePortOutput lecturePortOutput;
+
+    @Autowired
+    private EnrollPortOutput enrollPortOutput;
+
+    @Autowired
+    private ClassroomPortOutput classroomPortOutput;
 
     @Override
-    public List<ScheduleWeekResponse> getListSchedule(final String studentId) {
+    public List<ScheduleWeekResponse> getListSchedule(final Integer studentId) {
         List<ScheduleWeekResponse> scheduleWeekResponses = new ArrayList<>();
 
-        List<Integer> lectureGroups = studentPortOutput.getEnrolledClassesId(studentId);
+        List<Integer> lectureGroupsIds = enrollPortOutput.getLectureGroupByStudentId(studentId);
 
-        List<LectureRoom> rooms = new ArrayList<>();
-        for (int i=0; i<lectureGroups.size(); i++){
-            for(LectureRoom lr: lectureRoomPortOutput.findLectureRoomByLectureGroupId(lectureGroups.get(i))){
-                rooms.add(lr);
+        for (Integer lectureGroupId: lectureGroupsIds){
+            //ScheduleWeekResponse scheduleWeek = new ScheduleWeekResponse();
+            //lecture
+            String lectureName = lecturePortOutput.getLectureName(lectureGroupId); 
+            //scheduleWeek.setLecture(lectureName);
+
+            List<LectureRoom> lectureRoom = lectureRoomPortOutput.findLectureRoomByLectureGroupId(lectureGroupId);
+
+            //scheduleWeek.setClassRoom(classroom.getId());
+            //scheduleWeek.setBuilding(classroom.getBuilding());
+
+            for(LectureRoom lr: lectureRoom){
+                ClassRoom classroom = classroomPortOutput.getClassRoom(lr.getRoomId());
+                //building & classRoom
+                String classroomId = String.valueOf(classroom.getId());
+                String building = classroom.getBuilding();
+                //startHour
+                String startHour = lectureRoomPortOutput.getStartHour(lr.getScheduled());
+                //scheduleWeek.setStartHour(lectureRoomPortOutput.getStartHour(lr.getScheduled()));
+                //endHour
+                String endHour = lectureRoomPortOutput.getEndHour(lr.getScheduled());
+                //scheduleWeek.setEndHour(lectureRoomPortOutput.getEndHour(lr.getScheduled()));
+                //dayOfMonth
+                String dayOfMonth = lectureRoomPortOutput.getDayOfMonth(lr.getDay());
+                //scheduleWeek.setDayOfMonth(lectureRoomPortOutput.getDayOfMonth(lr.getDay()));
+                //dayOfWeek
+                String dayOfWeek = lectureRoomPortOutput.getDayOfWeek(lr.getDay());
+                //scheduleWeek.setDayOfWeek(lectureRoomPortOutput.getDayOfWeek(lr.getDay()));
+                
+                //add
+                scheduleWeekResponses.add(new ScheduleWeekResponse(lectureName, building, classroomId, startHour, endHour, dayOfWeek, dayOfMonth));
             }
-        }
-            
-       /*
-       retorno precisa: 
-            lecture - lectureGroups consulta LecturePortOutput (a partir de turma pega disciplina) precisa criar metodo p isso (getLectureByLectureGroup)
-            building - rooms consulta ClassroomPortOutput
-            classRoom - =rooms
-            startHour - schedule de rooms
-            endHour - schedule de rooms
-            dayOfMonth - day em rooms
-            dayOfWeek - alguma funcao aplicada em day de rooms
-       */ 
-       
 
+        }
+
+        
         return scheduleWeekResponses;
     }
     

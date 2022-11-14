@@ -12,7 +12,7 @@ import lombok.Data;
 @Table(name = "aluno")
 public class StudentEntity {
     @Id
-    private String id;
+    private Integer id;
 
     @Column(name = "nome")
     private String name;

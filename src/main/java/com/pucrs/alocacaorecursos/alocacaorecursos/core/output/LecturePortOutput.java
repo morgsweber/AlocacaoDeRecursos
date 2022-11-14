@@ -5,5 +5,7 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Lecture;
 public interface LecturePortOutput {
 
     Lecture getLecture(Integer integer);
+
+    String getLectureName(Integer id);
     
 }

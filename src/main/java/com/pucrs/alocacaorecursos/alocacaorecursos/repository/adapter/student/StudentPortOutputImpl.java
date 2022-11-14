@@ -20,9 +20,9 @@ public class StudentPortOutputImpl implements StudentPortOutput {
     private EnrollBase enrollRepository;
 
     @Override
-    public List<Integer> getEnrolledClassesId(String studentId){
+    public List<Integer> getEnrolledClassesId(Integer studentId){
 
-        List<Integer> list = enrollRepository.findLectureGroupByStudentId(Integer.parseInt(studentId));
+        List<Integer> list = enrollRepository.findLectureGroupByStudentId(studentId);
         return list;
     }
 }

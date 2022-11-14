@@ -3,10 +3,8 @@ package com.pucrs.alocacaorecursos.alocacaorecursos.core.usecase;
 import java.util.List;
 
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.scheduleweek.ScheduleWeekResponse;
-
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.*;
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_view.LectureViewDTO;
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_timeline.LectureScheduleDTO;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_view.LectureViewDTO;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_timeline.LectureScheduleDTO;
 
 public interface LecturesUserView {
     /*

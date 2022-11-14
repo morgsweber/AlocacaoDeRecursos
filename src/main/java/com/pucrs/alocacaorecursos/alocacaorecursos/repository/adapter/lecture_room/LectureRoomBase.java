@@ -7,8 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.LectureRoomEntity;
 
-public interface LectureRoomBase extends CrudRepository<LectureRoomEntity, String> {
+public interface LectureRoomBase extends CrudRepository<LectureRoomEntity, Integer> {
     
-    @Query("SELECT * FROM turma_sala WHERE turma_id = ?1")
-    List<LectureRoomEntity> findLectureRoomByLectureGroupId(final Integer id);
+    List<LectureRoomEntity> findByGroupId(final Integer id);
 }

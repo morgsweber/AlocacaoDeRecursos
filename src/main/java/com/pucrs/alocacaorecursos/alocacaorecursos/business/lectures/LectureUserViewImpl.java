@@ -6,8 +6,8 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.core.usecase.LecturesUserView
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Lecture;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.scheduleweek.ScheduleWeekResponse;
 
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_timeline.LectureScheduleDTO;
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_view.LectureViewDTO;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_timeline.LectureScheduleDTO;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_view.LectureViewDTO;
 
 public class LectureUserViewImpl implements LecturesUserView{
 
