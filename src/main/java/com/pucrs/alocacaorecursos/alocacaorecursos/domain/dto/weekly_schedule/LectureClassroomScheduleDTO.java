@@ -1,8 +1,7 @@
-package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto;
+package com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.weekly_schedule;
 
 import lombok.Builder;
 import lombok.Getter;
-
 
 @Builder
 @Getter

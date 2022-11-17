@@ -1,4 +1,4 @@
-package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_view;
+package com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_view;
 
 public class LectureViewDTO {
     String lectureName;

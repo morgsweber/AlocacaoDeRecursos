@@ -1,4 +1,4 @@
-package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.domain;
+package com.pucrs.alocacaorecursos.alocacaorecursos.domain;
 
 import lombok.Getter;
 import lombok.Setter;

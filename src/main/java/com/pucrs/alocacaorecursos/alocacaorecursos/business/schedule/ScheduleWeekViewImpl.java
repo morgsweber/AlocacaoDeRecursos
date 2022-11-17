@@ -8,14 +8,13 @@ import org.springframework.stereotype.Component;
 
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.ScheduleWeekView;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.ClassroomPortOutput;
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.EnrollPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LecturePortOutput;
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LectureRoomPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.TeachesPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.ClassRoom;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.LectureRoom;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.scheduleweek.ScheduleWeekResponse;
-
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.core.output.EnrollPortOutput;
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LectureRoomPortOutput;
 
 
 @Component
@@ -32,7 +31,7 @@ public class ScheduleWeekViewImpl implements ScheduleWeekView {
 
     @Autowired
     private EnrollPortOutput enrollPortOutput;
-
+    
     @Autowired
     private ClassroomPortOutput classroomPortOutput;
 

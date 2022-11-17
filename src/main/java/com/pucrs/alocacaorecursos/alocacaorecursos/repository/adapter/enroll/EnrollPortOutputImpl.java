@@ -1,9 +1,9 @@
-package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.enroll;
+package com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.enroll;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.core.output.EnrollPortOutput;
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.EnrollPortOutput;
 
 import java.util.List;
 

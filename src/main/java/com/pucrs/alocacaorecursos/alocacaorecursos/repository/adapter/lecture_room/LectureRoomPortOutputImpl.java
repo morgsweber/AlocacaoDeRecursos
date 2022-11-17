@@ -1,4 +1,4 @@
-package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.lecture_room;
+package com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.lecture_room;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -8,16 +8,14 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LectureRoomPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.LectureRoom;
+import com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.mapper.LectureRoomMapper;
 import com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.LectureRoomEntity;
-
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LectureRoomPortOutput;
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.*;
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.mapper.LectureRoomMapper;
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.utils.ScheduleConversor;;
+import com.pucrs.alocacaorecursos.alocacaorecursos.utils.ScheduleConversor;
 
 @Repository
-public class LectureRoomPortOutputImpl implements LectureRoomPortOutput{
+public class LectureRoomPortOutputImpl implements LectureRoomPortOutput {
 
     @Autowired
     private LectureRoomBase lectureRoomRepository;

@@ -16,7 +16,6 @@ public class EnrollEntity {
     @Column(name = "turma_id")
     private Integer lectureGroupId;
     
-    @Id
     @Column(name = "aluno_id")
     private Integer studentId;
 }

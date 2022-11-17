@@ -1,4 +1,4 @@
-package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter;
+package com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.student;
 
 import org.springframework.data.repository.CrudRepository;
 

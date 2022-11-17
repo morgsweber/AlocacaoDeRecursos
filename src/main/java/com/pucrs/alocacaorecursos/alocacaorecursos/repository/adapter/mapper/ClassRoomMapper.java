@@ -1,9 +1,9 @@
-package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.mapper;
+package com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.mapper;
+
+import java.util.Objects;
 
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.ClassRoom;
-import com.pucrs.alocacaorecursos.alocacaorecursos.domain.LectureRoom;
 import com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.ClassRoomEntity;
-import java.util.Objects;
 
 public class ClassRoomMapper {
     

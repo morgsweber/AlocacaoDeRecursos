@@ -1,4 +1,4 @@
-package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_timeline;
+package com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.lecture_timeline;
 
 import java.util.ArrayList;
 

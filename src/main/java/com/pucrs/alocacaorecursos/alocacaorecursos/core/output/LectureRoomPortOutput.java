@@ -1,4 +1,4 @@
-package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.core.output;
+package com.pucrs.alocacaorecursos.alocacaorecursos.core.output;
 
 import java.time.LocalDateTime;
 import java.util.List;

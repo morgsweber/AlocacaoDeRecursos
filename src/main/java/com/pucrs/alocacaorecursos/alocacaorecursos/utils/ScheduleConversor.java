@@ -1,4 +1,4 @@
-package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.utils;
+package com.pucrs.alocacaorecursos.alocacaorecursos.utils;
 
 import java.util.HashMap;
 

@@ -1,9 +1,9 @@
-package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.class_room;
+package com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.classroom;
 
 import java.util.Optional;
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.mapper.ClassRoomMapper;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.ClassroomPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.ClassRoom;
+import com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.mapper.ClassRoomMapper;
 import com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.ClassRoomEntity;
 
 

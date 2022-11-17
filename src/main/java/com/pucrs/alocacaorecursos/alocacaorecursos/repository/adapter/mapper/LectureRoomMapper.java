@@ -1,4 +1,4 @@
-package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.mapper;
+package com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.mapper;
 
 import com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.*;
 

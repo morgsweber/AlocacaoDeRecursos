@@ -1,4 +1,4 @@
-package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.lecture_room;
+package com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.lecture_room;
 
 import java.util.List;
 

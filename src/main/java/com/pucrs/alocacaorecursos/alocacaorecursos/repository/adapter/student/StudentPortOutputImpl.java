@@ -1,15 +1,12 @@
-package main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.student;
+package com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.student;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.StudentPortOutput;
-import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Student;
+import com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.enroll.EnrollBase;
 
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.StudentBase;
-import main.java.com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.enroll.EnrollBase;
 
 public class StudentPortOutputImpl implements StudentPortOutput {
 
