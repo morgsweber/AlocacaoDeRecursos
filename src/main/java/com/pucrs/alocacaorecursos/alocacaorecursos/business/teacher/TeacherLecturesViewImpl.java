@@ -72,3 +72,4 @@ public class TeacherLecturesViewImpl implements TeacherLecturesView {
     }
     
 }
+    

@@ -1,10 +1,11 @@
 package com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.requests;
 
-import lombok.Builder;
+
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@Builder
+@AllArgsConstructor
 public class RequestDTO{
 
     private String lectureName;
