@@ -11,13 +11,13 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "turma_aluno")
-public class LectureRoom {
+@Table(name = "turma_sala")
+public class LectureGroupRoomEntity {
 
     @Id
-    private int groupId;
-
-    @Column(name = "sala_id")
+    private Integer groupId;
+    
+    @Id
     private Integer roomId;
 
     @Column(name = "descricao")

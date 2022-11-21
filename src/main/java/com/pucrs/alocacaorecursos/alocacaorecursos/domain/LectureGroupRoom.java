@@ -7,9 +7,9 @@ import lombok.Setter;
 @Setter
 public class LectureGroupRoom {
 
-    private Integer lectureGroupId;
+    private Integer groupId;
 
-    private Integer ClassRoomId;
+    private Integer roomId;
 
     private String description;
 

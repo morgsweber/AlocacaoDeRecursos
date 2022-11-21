@@ -28,5 +28,12 @@ public class TeachesPortOutputImpl implements TeachesPortOutput {
 
         return list.isEmpty() ? new ArrayList<>() : listMapped;
     }
-    
+    @Override
+    public Teaches getTeachesByLectureGroup(String LectureGroupId) {
+
+        TeachesEntity te = teachesRepository.findByLectureGroupId(Integer.parseInt(LectureGroupId)); 
+        
+        Teaches T = TeachesMapper.mapFrom(te);
+        return T;
+    }
 }

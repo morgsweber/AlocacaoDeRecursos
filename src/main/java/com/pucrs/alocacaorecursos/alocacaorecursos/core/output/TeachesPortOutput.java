@@ -7,5 +7,5 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Teaches;
 public interface TeachesPortOutput {
     
     List<Teaches> getTeaches(final String teacherId);
-    
+    Teaches getTeachesByLectureGroup(final String teacherId);
 }

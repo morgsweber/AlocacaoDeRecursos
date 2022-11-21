@@ -9,4 +9,6 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.TeachesEn
 public interface TeachesBase extends CrudRepository<TeachesEntity, Integer> {
     
     List<TeachesEntity> findByTeacherId(final Integer id);
+
+    TeachesEntity findByLectureGroupId(final Integer id);
 }
