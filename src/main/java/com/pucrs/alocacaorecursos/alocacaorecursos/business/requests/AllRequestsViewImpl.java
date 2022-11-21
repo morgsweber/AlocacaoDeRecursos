@@ -17,6 +17,7 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.domain.TeacherRequest;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.requests.RequestDTO;
 
 public class AllRequestsViewImpl implements AllRequestsView {
+    
     @Autowired
     private RequestPortOutput requestPortOutput; 
     

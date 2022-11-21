@@ -9,7 +9,7 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.domain.RequestChange;
 public class RequestChangePortOutputImpl implements RequestChangePortOutput{
 
     @Override
-    public void save(RequestChange requestChange) {
+    public void save(final RequestChange requestChange) {
         // TODO Auto-generated method stub
         
     } 
