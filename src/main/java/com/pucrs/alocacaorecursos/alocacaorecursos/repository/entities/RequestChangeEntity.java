@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "pedido")
-public class RequestEntity {
+public class RequestChangeEntity {
     
     @Id
     @Column(name = "pedido_id")

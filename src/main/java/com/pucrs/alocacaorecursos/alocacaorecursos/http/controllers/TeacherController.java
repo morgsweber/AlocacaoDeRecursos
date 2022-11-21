@@ -29,10 +29,10 @@ public class TeacherController {
     @Autowired
     private TeacherRequestChange teacherRequestChange;
 
-    @PostMapping("/solicitacao")
-    public ResponseEntity professorSolicitacao(@RequestBody Map<String, String> request) {
+    @PostMapping("/solicitacao/{teacher_id}")
+    public ResponseEntity professorSolicitacao(@PathVariable String teacher_id, @RequestBody Map<String, String> request) {
 
-        Optional<TeacherResponseChangeDTO> response = teacherRequestChange.execute(request);
+        Optional<TeacherResponseChangeDTO> response = teacherRequestChange.execute(teacher_id, request);
 
         System.out.println("requisicao professorSolicitacao ok");
         

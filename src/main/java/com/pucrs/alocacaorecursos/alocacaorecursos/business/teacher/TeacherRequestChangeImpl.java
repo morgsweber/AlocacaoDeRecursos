@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.TeacherLecturesView;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.TeacherRequestChange;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.RequestChangePortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.TeacherPortOutput;
@@ -21,8 +22,17 @@ public class TeacherRequestChangeImpl implements TeacherRequestChange {
     @Autowired
     private TeacherPortOutput teacherPortOutput;
 
+    @Autowired
+    private TeacherLecturesView teacherLecturesView;
+
     @Override
-    public Optional<TeacherResponseChangeDTO> execute(Map<String, String> request) {
+    public Optional<TeacherResponseChangeDTO> execute(final String id, final Map<String, String> request) {
+
+        try {
+            
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
         
         final TeacherRequestDTO requestBody = new TeacherRequestDTO();
         requestBody.setRoom(request.get("sala"));
