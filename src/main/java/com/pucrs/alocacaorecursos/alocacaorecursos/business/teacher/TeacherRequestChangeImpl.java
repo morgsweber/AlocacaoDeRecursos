@@ -28,12 +28,6 @@ public class TeacherRequestChangeImpl implements TeacherRequestChange {
     @Override
     public Optional<TeacherResponseChangeDTO> execute(final String id, final Map<String, String> request) {
 
-        try {
-            
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
-        
         final TeacherRequestDTO requestBody = new TeacherRequestDTO();
         requestBody.setRoom(request.get("sala"));
         requestBody.setJustify(request.get("justificativa"));

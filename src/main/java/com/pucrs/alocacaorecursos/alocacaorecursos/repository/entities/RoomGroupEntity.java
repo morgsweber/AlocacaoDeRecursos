@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "turma_sala")
-public class RoomGroup {
+public class RoomGroupEntity {
     
     @Id
     @Column(name = "turma_sala_id")
