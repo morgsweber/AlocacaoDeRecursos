@@ -12,6 +12,7 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.ScheduleWeekView;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.scheduleweek.ScheduleWeekResponse;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/aluno")
@@ -21,7 +22,7 @@ public class StudentController {
     private ScheduleWeekView scheduleResponse;
 
     @GetMapping("/horarios")
-    public ResponseEntity<List<ScheduleWeekResponse>> alunoHorarios(@PathVariable final Integer studentId) {
+    public ResponseEntity<List<ScheduleWeekResponse>> alunoHorarios(@RequestParam final Integer studentId) {
         System.out.println("requisicao alunoHorarios ok");
         return ResponseEntity.ok(scheduleResponse.getListSchedule(studentId));
     }
