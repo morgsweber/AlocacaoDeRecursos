@@ -1,5 +1,9 @@
 package com.pucrs.alocacaorecursos.alocacaorecursos.core.usecase;
 
+import java.util.List;
+
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.TeacherRequest;
+
 public interface RequestClassroomExchange {
     /*
      * Acao realizada apenas pelo professor
@@ -15,5 +19,13 @@ public interface RequestClassroomExchange {
      * altera status da solicitacao
      */
     void approveRequest(String requestId, boolean isApproved);
+
+    /*
+     * Acao realizada apenas pelo admin
+     * altera status da solicitacao
+     */
+    void declineRequest(int requestId, boolean isDecline);
+     
+    List<TeacherRequest> getAllRequests(); 
 
 }

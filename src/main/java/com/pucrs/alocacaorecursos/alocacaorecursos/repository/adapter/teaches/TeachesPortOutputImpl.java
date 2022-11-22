@@ -32,7 +32,6 @@ public class TeachesPortOutputImpl implements TeachesPortOutput {
     public List<Teaches> getTeaches(Integer teacherId) {
 
         List<TeachesEntity> list = teachesRepository.findByTeacherId(teacherId);
-        System.out.println("Id:"+ list.get(0));
         List<Teaches> listMapped = new ArrayList<>();
 
         listMapped = list.stream().map(item -> TeachesMapper.mapFrom(item)).collect(Collectors.toList());

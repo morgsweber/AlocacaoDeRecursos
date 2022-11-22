@@ -1,3 +1,13 @@
+drop table if exists aluno CASCADE;
+drop table if exists disciplina CASCADE;
+drop table if exists ministra CASCADE;
+drop table if exists professor CASCADE;
+drop table if exists sala CASCADE;
+drop table if exists turma CASCADE;
+drop table if exists turma_aluno CASCADE;
+drop table if exists turma_sala CASCADE;
+drop table if exists pedido CASCADE;
+
 CREATE TABLE aluno
 (
  aluno_id  serial primary key,
@@ -50,14 +60,14 @@ CREATE TABLE turma_aluno
 
 CREATE TABLE ministra
 (
+ ministra_id int,
  professor_id int,
  turma_id   int,
  disciplina_id int,
  CONSTRAINT FK_21 FOREIGN KEY ( professor_id ) REFERENCES professor ( professor_id ),
  CONSTRAINT FK_6 FOREIGN KEY ( turma_id ) REFERENCES turma ( turma_id ),
  CONSTRAINT FK_22 FOREIGN KEY ( disciplina_id ) REFERENCES disciplina ( disciplina_id ),
- CONSTRAINT PK_ministra PRIMARY KEY (professor_id, turma_id, disciplina_id)
- 
+ CONSTRAINT PK_ministra PRIMARY KEY (turma_id, disciplina_id) 
 );
 
 CREATE TABLE turma_sala
@@ -71,4 +81,14 @@ CREATE TABLE turma_sala
  CONSTRAINT FK_81 FOREIGN KEY ( turma_id ) REFERENCES turma ( turma_id ),
  CONSTRAINT FK_49 FOREIGN KEY ( sala_id ) REFERENCES sala ( sala_id),
  CONSTRAINT UK_turma_sala UNIQUE (dia, horario, sala_id)
+ CONSTRAINT PK_turma_sala PRIMARY KEY (dia, horario, sala_id)
+);
+CREATE TABLE pedido
+(
+  pedido_id int,
+  professor_id int,
+  sala_id int,
+  nova_sala_id int,
+  justificativa varchar(100),
+  CONSTRAINT PK_pedido PRIMARY KEY (pedido_id,professor_id)
 );

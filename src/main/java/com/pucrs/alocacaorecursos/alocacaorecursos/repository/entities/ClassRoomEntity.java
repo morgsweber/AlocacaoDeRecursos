@@ -13,6 +13,7 @@ import lombok.Data;
 public class ClassRoomEntity {
 
     @Id
+    @Column(name = "sala_id")
     private Integer id;
 
     @Column(name = "predio")
