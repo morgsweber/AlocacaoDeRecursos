@@ -10,16 +10,4 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.enroll.Enr
 
 public class StudentPortOutputImpl implements StudentPortOutput {
 
-    @Autowired
-    private StudentBase studentRepository;
-
-    @Autowired
-    private EnrollBase enrollRepository;
-
-    @Override
-    public List<Integer> getEnrolledClassesId(Integer studentId){
-
-        List<Integer> list = enrollRepository.findLectureGroupByStudentId(studentId);
-        return list;
-    }
 }

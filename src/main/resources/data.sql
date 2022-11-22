@@ -40,11 +40,12 @@ CREATE TABLE turma
 
 CREATE TABLE turma_aluno
 (
+ turma_aluno_id serial primary key,
  aluno_id int,
  turma_id   int,
  CONSTRAINT FK_19 FOREIGN KEY ( turma_id ) REFERENCES turma ( turma_id ),
  CONSTRAINT FK_18 FOREIGN KEY ( aluno_id ) REFERENCES aluno ( aluno_id ),
- CONSTRAINT PK_turma_aluno PRIMARY KEY (aluno_id, turma_id)
+ CONSTRAINT UK_turma_aluno UNIQUE (aluno_id, turma_id)
 );
 
 CREATE TABLE ministra

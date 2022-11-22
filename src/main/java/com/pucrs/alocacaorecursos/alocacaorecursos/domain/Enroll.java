@@ -6,6 +6,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Enroll {
+
+    private Integer enrollId;
     private Integer lectureGroupId;
     private Integer studentId;    
 }

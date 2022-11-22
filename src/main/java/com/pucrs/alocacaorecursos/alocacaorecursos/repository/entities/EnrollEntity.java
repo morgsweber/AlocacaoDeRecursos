@@ -13,6 +13,9 @@ import lombok.Data;
 public class EnrollEntity {
     
     @Id
+    @Column(name = "turma_aluno_id")
+    private Integer enrollId;
+    
     @Column(name = "turma_id")
     private Integer lectureGroupId;
     
