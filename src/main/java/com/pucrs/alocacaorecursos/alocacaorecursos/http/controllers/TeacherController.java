@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.TeacherLecturesView;
@@ -30,9 +31,9 @@ public class TeacherController {
     private TeacherRequestChange teacherRequestChange;
 
     @PostMapping("/solicitacao/{teacher_id}")
-    public ResponseEntity professorSolicitacao(@PathVariable String teacher_id, @RequestBody Map<String, String> request) {
+    public ResponseEntity professorSolicitacao(@PathVariable String teacher_id, @RequestParam String group_id, @RequestBody Map<String, String> request) {
 
-        Optional<TeacherResponseChangeDTO> response = teacherRequestChange.execute(teacher_id, request);
+        Optional<TeacherResponseChangeDTO> response = teacherRequestChange.execute(teacher_id, group_id, request);
 
         System.out.println("requisicao professorSolicitacao ok");
         

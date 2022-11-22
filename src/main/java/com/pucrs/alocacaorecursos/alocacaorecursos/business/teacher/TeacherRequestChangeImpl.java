@@ -26,11 +26,13 @@ public class TeacherRequestChangeImpl implements TeacherRequestChange {
     private TeacherLecturesView teacherLecturesView;
 
     @Override
-    public Optional<TeacherResponseChangeDTO> execute(final String id, final Map<String, String> request) {
+    public Optional<TeacherResponseChangeDTO> execute(final String id, final String group_id, final Map<String, String> request) {
 
         final TeacherRequestDTO requestBody = new TeacherRequestDTO();
         requestBody.setRoom(request.get("sala"));
         requestBody.setJustify(request.get("justificativa"));
+
+        
 
 
         TeacherResponseChangeDTO response = new TeacherResponseChangeDTO(requestBody, "solicitacao com sucesso");
