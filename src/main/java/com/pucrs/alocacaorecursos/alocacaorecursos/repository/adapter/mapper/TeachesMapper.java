@@ -13,7 +13,7 @@ public class TeachesMapper {
         if(Objects.nonNull(entity)) {
             domain.setTeacherId(getNonNull(entity.getTeacherId()));
             domain.setDisciplinaId(getNonNull(entity.getDisciplinaId()));
-            domain.setGroupId(getNonNull(entity.getDisciplinaId()));
+            domain.setGroupId(getNonNull(entity.getGroupId()));
         }
 
         return domain;

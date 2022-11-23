@@ -12,7 +12,7 @@ INSERT INTO disciplina(disciplina_id, nome, ementa) VALUES(44,'Engenharia de Sof
 INSERT INTO ministra (ministra_id, professor_id, turma_id, disciplina_id) VALUES (1, 36, 42, 42);
 INSERT INTO ministra (ministra_id, professor_id, turma_id, disciplina_id) VALUES (2, 36, 43, 43);
 INSERT INTO ministra (ministra_id, professor_id, turma_id, disciplina_id) VALUES (3, 36, 44, 43);
-INSERT INTO ministra (ministra_id, professor_id, turma_id, disciplina_id) VALUES (4, 36, 44, 46);
+INSERT INTO ministra (ministra_id, professor_id, turma_id, disciplina_id) VALUES (4, 36, 44, 44);
 INSERT INTO ministra (ministra_id, professor_id, turma_id, disciplina_id) VALUES (5, 36, 45, 42);
 
 INSERT INTO sala(sala_id, predio, capacidade, tipo) VALUES(1, 'A', '30', 'Normal');

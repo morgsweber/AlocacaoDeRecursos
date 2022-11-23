@@ -45,18 +45,11 @@ public class ScheduleWeekViewImpl implements ScheduleWeekView {
         System.out.println("id das turmas: "+ lectureGroupsIds);
 
         for (Integer lectureGroupId: lectureGroupsIds){
-            //ScheduleWeekResponse scheduleWeek = new ScheduleWeekResponse();
-            //lecture //consultar a tabela ministra p pegar a conexao c o id da disciplina
             List<Teaches> lectureId = teachesPortOutput.getTeachesByLectureGroup(lectureGroupId); //verificar se vem mais de um, acredito que nao
-            System.out.println("qtd lectureIds "+ lectureId.size());
+            System.out.println("qtd lectureIds "+ lectureId.size() + "se >1 provavelmente errado");
             String lectureName = lecturePortOutput.getLectureName(lectureId.get(0).getDisciplinaId()); 
-            //String lectureName = lecturePortOutput.getLectureName(lectureGroupId); //consultar a tabela ministra p pegar a conexao c o id da disciplina
-            //scheduleWeek.setLecture(lectureName);
 
             List<LectureRoom> lectureRoom = lectureRoomPortOutput.findLectureRoomByLectureGroupId(lectureGroupId);
-
-            //scheduleWeek.setClassRoom(classroom.getId());
-            //scheduleWeek.setBuilding(classroom.getBuilding());
 
             for(LectureRoom lr: lectureRoom){
                 ClassRoom classroom = classroomPortOutput.getClassRoom(lr.getRoomId());
@@ -65,16 +58,12 @@ public class ScheduleWeekViewImpl implements ScheduleWeekView {
                 String building = classroom.getBuilding();
                 //startHour
                 String startHour = lectureRoomPortOutput.getStartHour(lr.getScheduled());
-                //scheduleWeek.setStartHour(lectureRoomPortOutput.getStartHour(lr.getScheduled()));
                 //endHour
                 String endHour = lectureRoomPortOutput.getEndHour(lr.getScheduled());
-                //scheduleWeek.setEndHour(lectureRoomPortOutput.getEndHour(lr.getScheduled()));
                 //dayOfMonth
                 String dayOfMonth = lectureRoomPortOutput.getDayOfMonth(lr.getDay());
-                //scheduleWeek.setDayOfMonth(lectureRoomPortOutput.getDayOfMonth(lr.getDay()));
                 //dayOfWeek
                 String dayOfWeek = lectureRoomPortOutput.getDayOfWeek(lr.getDay());
-                //scheduleWeek.setDayOfWeek(lectureRoomPortOutput.getDayOfWeek(lr.getDay()));
                 
                 //add
                 scheduleWeekResponses.add(new ScheduleWeekResponse(lectureName, building, classroomId, startHour, endHour, dayOfWeek, dayOfMonth));
@@ -86,4 +75,42 @@ public class ScheduleWeekViewImpl implements ScheduleWeekView {
         return scheduleWeekResponses;
     }
     
+    @Override
+    public List<ScheduleWeekResponse> getTeacherListSchedule(final Integer id) {
+        List<ScheduleWeekResponse> scheduleWeekResponses = new ArrayList<>();
+
+        List<Teaches> teaches = teachesPortOutput.getTeaches(id);
+        for (Teaches t: teaches){
+            System.out.println("ministra disciplinas " + t.getDisciplinaId());
+            System.out.println("ministra turmas" + t.getGroupId());
+            Integer lectureId = t.getDisciplinaId();
+            Integer lectureGroupId = t.getGroupId();
+
+            //lecture
+            String lectureName = lecturePortOutput.getLectureName(lectureId);
+            //lectureRoom
+            List<LectureRoom> lectureRoom = lectureRoomPortOutput.findLectureRoomByLectureGroupId(lectureGroupId);
+            System.out.println("total salas/dias "+ lectureRoom.size());
+
+            for(LectureRoom lr: lectureRoom){
+                ClassRoom classroom = classroomPortOutput.getClassRoom(lr.getRoomId());
+                //building & classRoom
+                String classroomId = String.valueOf(classroom.getId());
+                String building = classroom.getBuilding();
+                //startHour
+                String startHour = lectureRoomPortOutput.getStartHour(lr.getScheduled());
+                //endHour
+                String endHour = lectureRoomPortOutput.getEndHour(lr.getScheduled());
+                //dayOfMonth
+                String dayOfMonth = lectureRoomPortOutput.getDayOfMonth(lr.getDay());
+                //dayOfWeek
+                String dayOfWeek = lectureRoomPortOutput.getDayOfWeek(lr.getDay());
+                
+                //add
+                scheduleWeekResponses.add(new ScheduleWeekResponse(lectureName, building, classroomId, startHour, endHour, dayOfWeek, dayOfMonth));
+            }
+        }
+        
+        return scheduleWeekResponses;
+    }
 }
