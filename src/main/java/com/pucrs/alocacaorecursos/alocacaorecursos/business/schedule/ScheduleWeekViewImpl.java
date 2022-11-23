@@ -14,6 +14,7 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LectureRoomPortOu
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.TeachesPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.ClassRoom;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.LectureRoom;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Teaches;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.scheduleweek.ScheduleWeekResponse;
 
 
@@ -36,15 +37,20 @@ public class ScheduleWeekViewImpl implements ScheduleWeekView {
     private ClassroomPortOutput classroomPortOutput;
 
     @Override
-    public List<ScheduleWeekResponse> getListSchedule(final Integer studentId) {
+    public List<ScheduleWeekResponse> getStudentListSchedule(final Integer id) {
         List<ScheduleWeekResponse> scheduleWeekResponses = new ArrayList<>();
 
-        List<Integer> lectureGroupsIds = enrollPortOutput.getLectureGroupByStudentId(studentId);
+        List<Integer> lectureGroupsIds = enrollPortOutput.getLectureGroupByStudentId(id);
+        System.out.println("qtd turmas em q aluno ta matriculado"+ lectureGroupsIds.size());
+        System.out.println("id das turmas: "+ lectureGroupsIds);
 
         for (Integer lectureGroupId: lectureGroupsIds){
             //ScheduleWeekResponse scheduleWeek = new ScheduleWeekResponse();
-            //lecture
-            String lectureName = lecturePortOutput.getLectureName(lectureGroupId); 
+            //lecture //consultar a tabela ministra p pegar a conexao c o id da disciplina
+            List<Teaches> lectureId = teachesPortOutput.getTeachesByLectureGroup(lectureGroupId); //verificar se vem mais de um, acredito que nao
+            System.out.println("qtd lectureIds "+ lectureId.size());
+            String lectureName = lecturePortOutput.getLectureName(lectureId.get(0).getDisciplinaId()); 
+            //String lectureName = lecturePortOutput.getLectureName(lectureGroupId); //consultar a tabela ministra p pegar a conexao c o id da disciplina
             //scheduleWeek.setLecture(lectureName);
 
             List<LectureRoom> lectureRoom = lectureRoomPortOutput.findLectureRoomByLectureGroupId(lectureGroupId);

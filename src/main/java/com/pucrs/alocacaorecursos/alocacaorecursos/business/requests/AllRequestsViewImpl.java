@@ -48,10 +48,10 @@ public class AllRequestsViewImpl implements AllRequestsView {
 
         for (TeacherRequest request : allRequests) {
             lectureName = lecturePortOutput.getLecture(request.getLectureId()).getName();
-            teacherName = teacherPortOutput.getTeacher(String.valueOf(request.getTeacherId())).getName();    
+            teacherName = teacherPortOutput.getTeacher(request.getTeacherId()).getName();    
             lectureGroupId = String.valueOf(lectureGroupPortOutput.getLectureGroup(String.valueOf(request.getLectureGroupId())).getId());
-            currentClassroom = classroomPortOutput.getClassroom(String.valueOf(request.getCurrentClassroomId()));
-            newClassroom = classroomPortOutput.getClassroom(String.valueOf(request.getNewLocation()));   
+            currentClassroom = classroomPortOutput.getClassRoom(Integer.valueOf(request.getCurrentClassroomId()));
+            newClassroom = classroomPortOutput.getClassRoom(request.getNewLocation());   
             motive = request.getJustification();
             if (Objects.nonNull(newClassroom) && Objects.nonNull(currentClassroom)) {
                 response.add(new RequestDTO(lectureName, teacherName, lectureGroupId,String.valueOf(currentClassroom.getId()), currentClassroom.getType(), String.valueOf(newClassroom.getId()),newClassroom.getType(), motive));

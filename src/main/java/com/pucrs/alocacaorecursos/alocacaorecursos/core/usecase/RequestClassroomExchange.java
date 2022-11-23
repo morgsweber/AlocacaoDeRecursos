@@ -12,13 +12,13 @@ public interface RequestClassroomExchange {
      * - novo local (Laboratorio, Living)
      * - justificativa
      */
-    void requestClassroom(String professorId, String currentClassroomId, int newLocation, String justification);
+    void requestClassroom(int professorId, int currentClassroomId, int newLocation, String justification);
     
     /*
      * Acao realizada apenas pelo admin
      * altera status da solicitacao
      */
-    void approveRequest(String requestId, boolean isApproved);
+    void approveRequest(int requestId, boolean isApproved);
 
     /*
      * Acao realizada apenas pelo admin

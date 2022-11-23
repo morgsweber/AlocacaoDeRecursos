@@ -25,7 +25,6 @@ public class LectureRoomPortOutputImpl implements LectureRoomPortOutput {
 
         List<LectureRoomEntity> list = lectureRoomRepository.findByGroupId(id);
         
-        System.out.println("chegou em LectureRoomPortOutputImpl. prim id da consulta: " +list.get(0));
         
         List<LectureRoom> listMapped = new ArrayList<>();
         listMapped = list.stream().map(item -> LectureRoomMapper.mapFrom(item)).collect(Collectors.toList());
@@ -35,7 +34,7 @@ public class LectureRoomPortOutputImpl implements LectureRoomPortOutput {
 
     @Override
     public String getDayOfMonth(LocalDateTime data) {
-        return String.valueOf(data.getDayOfMonth());
+        return String.valueOf(data.getDayOfMonth()) + "/" + String.valueOf(data.getMonthValue());
     }
 
     @Override

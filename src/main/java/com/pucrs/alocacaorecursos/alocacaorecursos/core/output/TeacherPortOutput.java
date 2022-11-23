@@ -4,6 +4,6 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Teacher;
 
 public interface TeacherPortOutput {
 
-    Teacher getTeacher(String id);
+    Teacher getTeacher(Integer id);
     
 }

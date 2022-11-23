@@ -15,6 +15,7 @@ import lombok.Data;
 public class LectureRoomEntity {
 
     @Id
+    @Column(name = "turma_sala_id")
     private Integer id;
 
     @Column(name = "turma_id")

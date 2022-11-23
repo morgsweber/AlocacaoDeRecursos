@@ -24,7 +24,7 @@ public class StudentController {
     @GetMapping("/horarios")
     public ResponseEntity<List<ScheduleWeekResponse>> alunoHorarios(@RequestParam final Integer studentId) {
         System.out.println("requisicao alunoHorarios ok");
-        return ResponseEntity.ok(scheduleResponse.getListSchedule(studentId));
+        return ResponseEntity.ok(scheduleResponse.getStudentListSchedule(studentId));
     }
     @GetMapping("/turmas")
     public ResponseEntity alunoTurmas() {

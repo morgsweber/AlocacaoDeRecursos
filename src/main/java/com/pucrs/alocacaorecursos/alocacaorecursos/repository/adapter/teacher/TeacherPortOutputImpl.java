@@ -17,8 +17,8 @@ public class TeacherPortOutputImpl implements TeacherPortOutput{
     private TeacherBase teacherRepository;
 
     @Override
-    public Teacher getTeacher(String id) {
-        Optional<TeacherEntity> teacher = teacherRepository.findById(Integer.parseInt(id));
+    public Teacher getTeacher(Integer id) {
+        Optional<TeacherEntity> teacher = teacherRepository.findById(id);
 
         if(teacher.isPresent()) {
             return TeacherMapper.mapFrom(teacher.get());

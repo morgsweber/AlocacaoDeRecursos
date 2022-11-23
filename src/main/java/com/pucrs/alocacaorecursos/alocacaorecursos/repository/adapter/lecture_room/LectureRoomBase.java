@@ -3,7 +3,6 @@ package com.pucrs.alocacaorecursos.alocacaorecursos.repository.adapter.lecture_r
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.jpa.repository.Query;
 
 import com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.LectureRoomEntity;
 

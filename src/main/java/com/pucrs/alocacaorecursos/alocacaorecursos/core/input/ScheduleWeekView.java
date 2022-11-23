@@ -6,6 +6,6 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.scheduleweek.Sched
 
 public interface ScheduleWeekView {
     
-    List<ScheduleWeekResponse> getListSchedule(final Integer studentId);
+    List<ScheduleWeekResponse> getStudentListSchedule(final Integer studentId);
     
 }
