@@ -17,9 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.ScheduleWeekView;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.TeacherLecturesView;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.TeacherRequestChange;
-import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher.TeacherResponseChangeDTO;
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.usecase.RequestClassroomExchange;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.RequestResult;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.scheduleweek.ScheduleWeekResponse;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher.TeacherLecturesResponse;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher.TeacherResponseChangeDTO;
 
 @RestController
 @RequestMapping("/professor")
@@ -34,20 +36,23 @@ public class TeacherController {
     @Autowired
     private ScheduleWeekView scheduleResponse;
 
+    @Autowired
+    private RequestClassroomExchange requestClassroomExchange;
+
     @PostMapping("/solicitacao/{teacher_id}")
     public ResponseEntity professorSolicitacao(@PathVariable Integer teacher_id, @RequestParam Integer group_id, @RequestBody Map<String, String> request) {
 
         Optional<TeacherResponseChangeDTO> response = teacherRequestChange.execute(teacher_id, group_id, request);
 
-        System.out.println("requisicao professorSolicitacao ok");
-        
         return response.isPresent() ? ResponseEntity.status(HttpStatus.CREATED).body(response) : ResponseEntity.badRequest().build();
     }
 
-    @GetMapping("/cronograma")
-    public ResponseEntity professorCronograma() {
-        System.out.println("requisicao professorCronograma ok");
-        return ResponseEntity.ok().build();
+    @GetMapping("/solicitacao/resultado")
+    public ResponseEntity professorCronograma(@RequestParam Integer requestId) {
+
+        final Optional<RequestResult> response = requestClassroomExchange.getRequestResult(requestId);
+
+        return response.isPresent() ? ResponseEntity.ok(response.get()) : ResponseEntity.notFound().build();
     }
 
     @GetMapping("/turmas/{id}")
@@ -60,7 +65,10 @@ public class TeacherController {
 
     @GetMapping("/horarios")
     public ResponseEntity<List<ScheduleWeekResponse>> professorHorarios(@RequestParam final Integer teacherId) {
-        System.out.println("requisicao professorHorarios ok");
-        return ResponseEntity.ok(scheduleResponse.getTeacherListSchedule(teacherId));
+
+        var response = scheduleResponse.getTeacherListSchedule(teacherId);
+
+        return !response.isEmpty() ? ResponseEntity.ok().body(response) : ResponseEntity.notFound().build();
+
     }
 }

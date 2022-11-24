@@ -5,21 +5,23 @@ import java.util.List;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.AllRequestsView;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.ClassroomPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LectureGroupPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LecturePortOutput;
-import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.RequestPortOutput;
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.RequestChangePortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.TeacherPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.ClassRoom;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.TeacherRequest;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.requests.RequestDTO;
 
+@Component
 public class AllRequestsViewImpl implements AllRequestsView {
     
     @Autowired
-    private RequestPortOutput requestPortOutput; 
+    private RequestChangePortOutput requestPortOutput; 
     
     @Autowired
     private TeacherPortOutput teacherPortOutput;//teacher
@@ -43,10 +45,12 @@ public class AllRequestsViewImpl implements AllRequestsView {
         String motive; 
         ClassRoom currentClassroom;
         ClassRoom newClassroom;
+        Integer requestId;
 
         allRequests = requestPortOutput.getAllRequests();
 
         for (TeacherRequest request : allRequests) {
+            requestId = request.getRequestId();
             lectureName = lecturePortOutput.getLecture(request.getLectureId()).getName();
             teacherName = teacherPortOutput.getTeacher(request.getTeacherId()).getName();    
             lectureGroupId = String.valueOf(lectureGroupPortOutput.getLectureGroup(String.valueOf(request.getLectureGroupId())).getId());
@@ -54,7 +58,7 @@ public class AllRequestsViewImpl implements AllRequestsView {
             newClassroom = classroomPortOutput.getClassRoom(request.getNewLocation());   
             motive = request.getJustification();
             if (Objects.nonNull(newClassroom) && Objects.nonNull(currentClassroom)) {
-                response.add(new RequestDTO(lectureName, teacherName, lectureGroupId,String.valueOf(currentClassroom.getId()), currentClassroom.getType(), String.valueOf(newClassroom.getId()),newClassroom.getType(), motive));
+                response.add(new RequestDTO(requestId, lectureName, teacherName, lectureGroupId,String.valueOf(currentClassroom.getId()), currentClassroom.getType(), String.valueOf(newClassroom.getId()),newClassroom.getType(), motive));
             }    
         }
 

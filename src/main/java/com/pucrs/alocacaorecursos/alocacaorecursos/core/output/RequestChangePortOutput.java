@@ -10,4 +10,6 @@ public interface RequestChangePortOutput {
     void save(final RequestChange requestChange);
 
     List<TeacherRequest> getAllRequests();
+
+    Boolean existsById(final Integer requestId);
 }

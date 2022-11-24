@@ -3,6 +3,7 @@ package com.pucrs.alocacaorecursos.alocacaorecursos.http.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,14 +24,19 @@ public class StudentController {
 
     @GetMapping("/horarios")
     public ResponseEntity<List<ScheduleWeekResponse>> alunoHorarios(@RequestParam final Integer studentId) {
-        System.out.println("requisicao alunoHorarios ok");
-        return ResponseEntity.ok(scheduleResponse.getStudentListSchedule(studentId));
+
+        var response = scheduleResponse.getStudentListSchedule(studentId);
+
+        return !response.isEmpty() ? ResponseEntity.ok().body(response) : ResponseEntity.notFound().build(); 
+        
     }
+
     @GetMapping("/turmas")
     public ResponseEntity alunoTurmas() {
         System.out.println("requisicao alunoTurmas ok");
         return ResponseEntity.ok().build();
     }
+    
     @GetMapping("/cronograma")
     public ResponseEntity alunoCronograma() {
         System.out.println("requisicao alunoCronograma ok");

@@ -17,7 +17,7 @@ INSERT INTO ministra (ministra_id, professor_id, turma_id, disciplina_id) VALUES
 
 INSERT INTO sala(sala_id, predio, capacidade, tipo) VALUES(1, 'A', '30', 'Normal');
 INSERT INTO sala(sala_id, predio, capacidade, tipo) VALUES(2, 'A', '60', 'Normal');
-INSERT INTO sala(sala_id, predio, capacidade, tipo) VALUES(3, 'A', '60', 'Laboratório');
+INSERT INTO sala(sala_id, predio, capacidade, tipo) VALUES(3, 'A', '60', 'Laboratorio');
 INSERT INTO sala(sala_id, predio, capacidade, tipo) VALUES(4, 'A', '30', 'Living');
 INSERT INTO sala(sala_id, predio, capacidade, tipo) VALUES(5, 'A', '30', 'Normal');
 

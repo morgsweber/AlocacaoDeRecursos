@@ -7,11 +7,13 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.TeacherLecturesView;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.TeacherRequestChange;
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LectureRoomPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.RequestChangePortOutput;
-import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.TeacherPortOutput;
-import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher.TeacherLecturesResponse;
+import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.TeachesPortOutput;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.LectureRoom;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.RequestChange;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Teaches;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher.TeacherRequestDTO;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher.TeacherResponseChangeDTO;
 
@@ -22,36 +24,46 @@ public class TeacherRequestChangeImpl implements TeacherRequestChange {
     private RequestChangePortOutput requestChangePortOutput;
 
     @Autowired
-    private TeacherPortOutput teacherPortOutput;
+    private TeachesPortOutput teachesPortOutput;
 
     @Autowired
-    private TeacherLecturesView teacherLecturesView;
+    private LectureRoomPortOutput lectureRoomPortOutput; 
 
     @Override
     public Optional<TeacherResponseChangeDTO> execute(final Integer id, final Integer group_id, final Map<String, String> request) {
 
-        final List<TeacherLecturesResponse> teacherGroupList = teacherLecturesView.getTeacherLectures(id);
+        final TeacherRequestDTO requestBody = new TeacherRequestDTO();
 
-        final Optional<TeacherLecturesResponse> result = teacherGroupList.stream()
-            .filter(item -> item.equals(group_id))
+        List<Teaches> teacherGroupList = teachesPortOutput.getTeaches(id);
+
+        List<LectureRoom> currentRoomList = lectureRoomPortOutput.findLectureRoomByLectureGroupId(group_id);
+        
+        Optional<LectureRoom> resultCurrentRoom = currentRoomList.stream()
             .findFirst();
 
-        if(result.isPresent()) {
-            
-        }
+        Optional<Teaches> result = teacherGroupList.stream()
+            .filter(item -> item.getGroupId().equals(group_id))
+            .findFirst();
 
-        final TeacherRequestDTO requestBody = new TeacherRequestDTO();
+        if(result.isPresent() && resultCurrentRoom.isPresent()) {
+            var getData = result.get();
+            var getRoom = resultCurrentRoom.get();
+                      
+            requestBody.setRoom(request.get("sala"));
+            requestBody.setJustify(request.get("justificativa"));
+
+            var requestChange = new RequestChange(requestBody, 
+                    getData.getTeacherId(), getRoom.getRoomId(), getData.getDisciplinaId(), getData.getGroupId());
+
+            requestChangePortOutput.save(requestChange);           
+
+            return Optional.of(new TeacherResponseChangeDTO(requestBody, "Solicitacao efetuada com sucesso"));
+        }
+        
         requestBody.setRoom(request.get("sala"));
         requestBody.setJustify(request.get("justificativa"));
 
-        TeacherResponseChangeDTO response = new TeacherResponseChangeDTO(requestBody, "solicitacao com sucesso");
-
-        Optional<TeacherResponseChangeDTO> optionalResponse = Optional.of(response);
-        return optionalResponse;
+        return Optional.of(new TeacherResponseChangeDTO(requestBody, "Solicitacao nao efetuada."));
     }
 
-    private void saveRequestInDatabase(final TeacherRequestDTO requestData) {
-        
-    }
-    
 }

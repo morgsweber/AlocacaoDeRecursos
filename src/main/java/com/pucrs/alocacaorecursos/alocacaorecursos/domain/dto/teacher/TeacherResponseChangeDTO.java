@@ -1,10 +1,12 @@
 package com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class TeacherResponseChangeDTO {
     
     private String room; 

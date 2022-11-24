@@ -8,6 +8,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class RequestDTO{
 
+    private Integer requestId;
     private String lectureName;
     private String teacherName;
     private String lectureGroupId;
