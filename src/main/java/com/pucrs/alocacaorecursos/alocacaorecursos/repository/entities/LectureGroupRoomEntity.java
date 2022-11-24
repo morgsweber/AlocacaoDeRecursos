@@ -15,9 +15,10 @@ import lombok.Data;
 public class LectureGroupRoomEntity {
 
     @Id
+    @Column(name = "turma_id")
     private Integer groupId;
     
-    @Id
+    @Column(name = "sala_id")
     private Integer roomId;
 
     @Column(name = "descricao")

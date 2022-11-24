@@ -2,25 +2,18 @@ package com.pucrs.alocacaorecursos.alocacaorecursos.business.teacher;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.TeacherClassesView;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.ClassroomPortOutput;
-import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LectureGroupPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LectureGroupRoomPortOutput;
-
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.LecturePortOutput;
-import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.TeacherPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.TeachesPortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.ClassRoom;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Lecture;
-import com.pucrs.alocacaorecursos.alocacaorecursos.domain.LectureGroup;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.LectureGroupRoom;
-
-import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Teacher;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.Teaches;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher.TeacherClassesResponse; 
 @Component

@@ -28,12 +28,13 @@ public class TeachesPortOutputImpl implements TeachesPortOutput {
 
         return list.isEmpty() ? new ArrayList<>() : listMapped;
     }
-    @Override
-    public Teaches getTeachesByLectureGroup(String LectureGroupId) {
 
-        TeachesEntity te = teachesRepository.findByLectureGroupId(Integer.parseInt(LectureGroupId)); 
+    @Override
+    public Teaches getTeachesByLectureGroup(String lectureGroupId) {
+
+        TeachesEntity entity = teachesRepository.findByDisciplinaId(Integer.parseInt(lectureGroupId)); 
         
-        Teaches T = TeachesMapper.mapFrom(te);
-        return T;
+        Teaches teaches = TeachesMapper.mapFrom(entity);
+        return teaches;
     }
 }

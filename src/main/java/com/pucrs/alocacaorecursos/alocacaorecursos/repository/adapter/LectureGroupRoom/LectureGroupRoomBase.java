@@ -8,5 +8,5 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.repository.entities.LectureGr
 
 public interface LectureGroupRoomBase extends CrudRepository<LectureGroupRoomEntity, Integer> {
     
-    List<LectureGroupRoomEntity> findbyGroupId(Integer groupId);
+    List<LectureGroupRoomEntity> findByGroupId(Integer groupId);
 }

@@ -21,13 +21,12 @@ public class LectureGroupRoomPortOutputImpl implements LectureGroupRoomPortOutpu
     
     @Override
     public List<LectureGroupRoom> getLectureGroupRoom(String groupId) {
-        List<LectureGroupRoomEntity> list = lectureGroupRoomBase.findbyGroupId(Integer.parseInt(groupId));
+        List<LectureGroupRoomEntity> list = lectureGroupRoomBase.findByGroupId(Integer.parseInt(groupId));
         List<LectureGroupRoom> listMapped = new ArrayList<>();
 
         listMapped = list.stream().map(item -> LectureGroupRoomMapper.mapFrom(item)).collect(Collectors.toList());
 
-        return list.isEmpty() ? new ArrayList<>() : listMapped;
-       
+        return list.isEmpty() ? new ArrayList<>() : listMapped;   
         
     }
 

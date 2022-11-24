@@ -10,5 +10,5 @@ public interface TeachesBase extends CrudRepository<TeachesEntity, Integer> {
     
     List<TeachesEntity> findByTeacherId(final Integer id);
 
-    TeachesEntity findByLectureGroupId(final Integer id);
+    TeachesEntity findByDisciplinaId(final Integer id);
 }
