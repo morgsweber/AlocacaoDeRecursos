@@ -7,12 +7,12 @@ import lombok.Setter;
 @Setter
 public class RequestChange {
 
-    private String disciplina;
-    private String nome_professor;
-    private String turma;
-    private String descricao;
-    private String sala;
-    private String laboratorio;
-    private String troca;
+    private Integer requestId;
+    private Integer teacherId;
+    private Integer currentClassroomId;
+    private Integer newClassroomId;
+    private Integer lectureId;
+    private Integer lectureGroupId;
+    private String motive;
     
 }

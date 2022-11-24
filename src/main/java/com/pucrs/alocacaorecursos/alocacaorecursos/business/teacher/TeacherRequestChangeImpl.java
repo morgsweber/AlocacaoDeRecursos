@@ -1,5 +1,6 @@
 package com.pucrs.alocacaorecursos.alocacaorecursos.business.teacher;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -10,6 +11,7 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.TeacherLecturesVie
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.input.TeacherRequestChange;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.RequestChangePortOutput;
 import com.pucrs.alocacaorecursos.alocacaorecursos.core.output.TeacherPortOutput;
+import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher.TeacherLecturesResponse;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher.TeacherRequestDTO;
 import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.teacher.TeacherResponseChangeDTO;
 
@@ -26,12 +28,21 @@ public class TeacherRequestChangeImpl implements TeacherRequestChange {
     private TeacherLecturesView teacherLecturesView;
 
     @Override
-    public Optional<TeacherResponseChangeDTO> execute(final String id, final Map<String, String> request) {
+    public Optional<TeacherResponseChangeDTO> execute(final String id, final String group_id, final Map<String, String> request) {
+
+        final List<TeacherLecturesResponse> teacherGroupList = teacherLecturesView.getTeacherLectures(id);
+
+        final Optional<TeacherLecturesResponse> result = teacherGroupList.stream()
+            .filter(item -> item.equals(group_id))
+            .findFirst();
+
+        if(result.isPresent()) {
+            
+        }
 
         final TeacherRequestDTO requestBody = new TeacherRequestDTO();
         requestBody.setRoom(request.get("sala"));
         requestBody.setJustify(request.get("justificativa"));
-
 
         TeacherResponseChangeDTO response = new TeacherResponseChangeDTO(requestBody, "solicitacao com sucesso");
 
