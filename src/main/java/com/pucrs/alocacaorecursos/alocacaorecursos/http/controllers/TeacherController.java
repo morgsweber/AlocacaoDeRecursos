@@ -35,7 +35,7 @@ public class TeacherController {
     private ScheduleWeekView scheduleResponse;
 
     @PostMapping("/solicitacao/{teacher_id}")
-    public ResponseEntity professorSolicitacao(@PathVariable String teacher_id, @RequestParam String group_id, @RequestBody Map<String, String> request) {
+    public ResponseEntity professorSolicitacao(@PathVariable Integer teacher_id, @RequestParam Integer group_id, @RequestBody Map<String, String> request) {
 
         Optional<TeacherResponseChangeDTO> response = teacherRequestChange.execute(teacher_id, group_id, request);
 

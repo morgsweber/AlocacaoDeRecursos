@@ -28,7 +28,7 @@ public class TeacherRequestChangeImpl implements TeacherRequestChange {
     private TeacherLecturesView teacherLecturesView;
 
     @Override
-    public Optional<TeacherResponseChangeDTO> execute(final String id, final String group_id, final Map<String, String> request) {
+    public Optional<TeacherResponseChangeDTO> execute(final Integer id, final Integer group_id, final Map<String, String> request) {
 
         final List<TeacherLecturesResponse> teacherGroupList = teacherLecturesView.getTeacherLectures(id);
 
