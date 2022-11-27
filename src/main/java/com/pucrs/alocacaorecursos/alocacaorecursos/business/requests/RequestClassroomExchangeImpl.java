@@ -21,19 +21,19 @@ public class RequestClassroomExchangeImpl implements RequestClassroomExchange {
     private RequestChangePortOutput requestChangePortOutput;
 
     @Override
-    public Optional<ResponseResultDTO> approveRequest(Integer requestId, boolean isApproved) {
+    public Optional<ResponseResultDTO> approveRequest(Integer requestId, String isApproved) {
 
         final boolean request = requestChangePortOutput.existsById(requestId);
 
         if(request) {
-            var result = new RequestResult(requestId, isApproved);
+            var result = new RequestResult(requestId, Boolean.parseBoolean(isApproved));
 
             requestResultPortOutput.save(result);
             
         }
 
-        return request ? Optional.ofNullable(new ResponseResultDTO(String.valueOf(isApproved), "Solicitacao Aprovada")) : 
-                            Optional.ofNullable(new ResponseResultDTO(String.valueOf(isApproved), "Solicitacao Reprovada"));
+        return request ? Optional.ofNullable(new ResponseResultDTO(isApproved, "Solicitacao Aprovada")) : 
+                            Optional.ofNullable(new ResponseResultDTO(isApproved, "Solicitacao Reprovada"));
         
     }
 

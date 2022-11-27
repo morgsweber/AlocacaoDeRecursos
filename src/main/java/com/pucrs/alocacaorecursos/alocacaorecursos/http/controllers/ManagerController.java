@@ -1,6 +1,7 @@
 package com.pucrs.alocacaorecursos.alocacaorecursos.http.controllers;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,9 +38,9 @@ public class ManagerController {
     }
 
     @PostMapping("/turmas/aprova")
-    public ResponseEntity gestorTurmasAprova(@RequestParam Integer requestId, @RequestBody String status) {
+    public ResponseEntity gestorTurmasAprova(@RequestParam Integer requestId, @RequestBody Map<String, String> status) {
         
-        Optional<ResponseResultDTO> response = requestClassroomExchange.approveRequest(requestId, Boolean.parseBoolean(status));
+        Optional<ResponseResultDTO> response = requestClassroomExchange.approveRequest(requestId, status.get("status"));
         
         return response.isPresent() ? ResponseEntity.status(HttpStatus.CREATED).body(response) : ResponseEntity.badRequest().build();
     }

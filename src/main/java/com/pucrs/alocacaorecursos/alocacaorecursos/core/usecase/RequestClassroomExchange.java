@@ -7,7 +7,7 @@ import com.pucrs.alocacaorecursos.alocacaorecursos.domain.dto.requests.ResponseR
 
 public interface RequestClassroomExchange {    
 
-    Optional<ResponseResultDTO> approveRequest(Integer requestId, boolean isApproved);
+    Optional<ResponseResultDTO> approveRequest(Integer requestId, String isApproved);
 
     Optional<RequestResult> getRequestResult(final Integer requestId);
      
